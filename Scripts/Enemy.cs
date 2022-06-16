@@ -1,11 +1,17 @@
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private int _speed = 5;
-    [SerializeField] private int _hp;
+    [SerializeField] private AudioClip _takeDamage;
     [SerializeField] private GameObject _expl;
+    [SerializeField] private GameObject _crap;
+    [SerializeField] private GameObject _effect;
+    [SerializeField] private GameObject _spawn;
     [SerializeField] private Transform _lifeBar;
+    [SerializeField] private Player _player;
+    [SerializeField] private int _speed;
+    [SerializeField] private int _hp;
 
     private float _oldLifeBar;
 
@@ -13,6 +19,7 @@ public class Enemy : MonoBehaviour
     {
         _oldLifeBar = _lifeBar.localScale.x;
         InvokeRepeating("Move", 1, 1);
+        InvokeRepeating("GenerateCrap", 1, 3);
     }
 
     private void Move()
@@ -25,6 +32,7 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        PlayMusic();
         _hp -= damage;
         HealthBar();
 
@@ -32,6 +40,7 @@ public class Enemy : MonoBehaviour
         {
             Instantiate(_expl, transform.position, transform.rotation);
             Destroy(gameObject);
+            _player.IncreaseScore();
         }
     }
 
@@ -39,5 +48,26 @@ public class Enemy : MonoBehaviour
     {
         _lifeBar.localPosition = new Vector2(1.75f * _hp / 100 - 1.75f, _lifeBar.localPosition.y);
         _lifeBar.localScale = new Vector2(_oldLifeBar * _hp / 100, _lifeBar.localScale.y);
+    }
+
+    private void GenerateCrap()
+    {
+        PlayMusic();
+        GameObject eff = Instantiate(_effect, _spawn.transform.position, transform.rotation);
+        eff.transform.SetParent(_spawn.transform);
+        Vector3 bulletPosition = _spawn.transform.position;
+        Vector2 bulletForce;
+        float x = _spawn.transform.position.x - transform.position.x;
+        float y = _spawn.transform.position.y - transform.position.y;
+        bulletForce = new Vector2(x, y);
+        GameObject bulletClone = Instantiate(_crap,
+            bulletPosition,
+            transform.rotation) as GameObject;
+        bulletClone.GetComponent<Rigidbody2D>().velocity = bulletForce * _speed;
+    }
+
+    private void PlayMusic()
+    {
+        GetComponent<AudioSource>().PlayOneShot(_takeDamage);
     }
 }

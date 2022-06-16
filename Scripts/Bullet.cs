@@ -2,15 +2,13 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private float time;
+    [SerializeField] private float _time;
     [SerializeField] private int _damage;
     [SerializeField] private GameObject _expl;
 
-    private Bullet _bullet;
-
     private void Start()
     {
-        Destroy(gameObject, time);
+        Destroy(gameObject, _time);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

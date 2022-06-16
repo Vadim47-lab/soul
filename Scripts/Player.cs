@@ -1,19 +1,32 @@
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(AudioSource))]
 public class Player : MonoBehaviour
 {
-    [SerializeField] private GameObject bullet;
-    [SerializeField] private GameObject effect;
-    [SerializeField] private GameObject spawn;
-    [SerializeField] private float speed = 10.0f;
-    [SerializeField] private float rof = 0.2f;
-    [SerializeField] private float random = 0.5f;
+    [SerializeField] private AudioClip _shoot;
+    [SerializeField] private GameObject _expl;
+    [SerializeField] private GameObject _bullet;
+    [SerializeField] private GameObject _effect;
+    [SerializeField] private GameObject _spawn;
+    [SerializeField] private Transform _lifeBar;
+    [SerializeField] private float _speed;
+    [SerializeField] private int _hp;
+    [SerializeField] private float _rof;
+    [SerializeField] private float _random;
+    [SerializeField] private int _amountEnemy;
 
-    private float time;
+    private float _time;
+    private int _score;
+    private float _oldLifeBar;
+
+    public event UnityAction<int> ScoreChanged;
 
     private void Start()
     {
-        time = 0;
+        _oldLifeBar = _lifeBar.localScale.x;
+        _time = 0;
     }
 
     private void Update()
@@ -41,28 +54,68 @@ public class Player : MonoBehaviour
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
 
-        if (Input.GetMouseButton(0) && time <= 0)
+        if (Input.GetMouseButton(0) && _time <= 0)
         {
             GenerateBullet();
 
-            time = rof;
+            _time = _rof;
         }
 
-        time = time - Time.deltaTime;
+        _time -= Time.deltaTime;
+    }
+
+    public void IncreaseScore()
+    {
+        _score++;
+        ScoreChanged?.Invoke(_score);
+        DefeatedEnemy();
+    }
+
+    public void TakeDamage(int damage)
+    {
+        PlayMusic();
+        _hp -= damage;
+        HealthBar();
+
+        if (_hp <= 0)
+        {
+            Instantiate(_expl, transform.position, transform.rotation);
+            Destroy(gameObject);
+        }
+    }
+
+    private void HealthBar()
+    {
+        _lifeBar.localPosition = new Vector2(1.75f * _hp / 100 - 1.75f, _lifeBar.localPosition.y);
+        _lifeBar.localScale = new Vector2(_oldLifeBar * _hp / 100, _lifeBar.localScale.y);
+    }
+
+    private void DefeatedEnemy()
+    {
+        if (_score == _amountEnemy)
+        {
+            SceneManager.LoadScene(2);
+        }
     }
 
     private void GenerateBullet()
     {
-        GameObject eff = Instantiate(effect, spawn.transform.position, transform.rotation);
-        eff.transform.SetParent(spawn.transform);
-        Vector3 bulletPosition = spawn.transform.position;
+        PlayMusic();
+        GameObject eff = Instantiate(_effect, _spawn.transform.position, transform.rotation);
+        eff.transform.SetParent(_spawn.transform);
+        Vector3 bulletPosition = _spawn.transform.position;
         Vector2 bulletForce;
-        float x = spawn.transform.position.x - transform.position.x;
-        float y = spawn.transform.position.y - transform.position.y;
+        float x = _spawn.transform.position.x - transform.position.x;
+        float y = _spawn.transform.position.y - transform.position.y;
         bulletForce = new Vector2(x, y);
-        GameObject bulletClone = Instantiate(bullet, 
+        GameObject bulletClone = Instantiate(_bullet, 
             bulletPosition, 
             transform.rotation) as GameObject;
-        bulletClone.GetComponent<Rigidbody2D>().velocity = bulletForce * speed;
+        bulletClone.GetComponent<Rigidbody2D>().velocity = bulletForce * _speed;
+    }
+
+    private void PlayMusic()
+    {
+        GetComponent<AudioSource>().PlayOneShot(_shoot);
     }
 }

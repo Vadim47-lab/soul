@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-    [SerializeField] private float speed = 100f;
+    [SerializeField] private float _speed;
+
     private Rigidbody2D rb;
 
     private void Start()
@@ -14,6 +15,6 @@ public class Move : MonoBehaviour
     {
         float moveX = Input.GetAxis("Horizontal");
         float moveY = Input.GetAxis("Vertical");
-        rb.AddForce(new Vector2(moveX * speed, moveY * speed), ForceMode2D.Force);
+        rb.AddForce(new Vector2(moveX * _speed, moveY * _speed), ForceMode2D.Force);
     }
 }
