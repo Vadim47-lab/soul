@@ -8,6 +8,7 @@ public class Win : MonoBehaviour
     [SerializeField] private AudioClip _buttonPress;
     [SerializeField] private GameObject _present;
     [SerializeField] private GameObject _toy;
+    [SerializeField] private GameObject _warning;
     [SerializeField] private Button _restartButton;
     [SerializeField] private Button _exitButton;
     [SerializeField] private Button _mainMenuButton;
@@ -41,7 +42,7 @@ public class Win : MonoBehaviour
     {
         PlayMusic();
 
-        Application.Quit();
+        _warning.SetActive(true);
     }
 
     private void OnMainMenuButtonClick()
@@ -57,6 +58,18 @@ public class Win : MonoBehaviour
 
         _present.SetActive(false);
         _toy.SetActive(true);
+    }
+
+    public void PressNo()
+    {
+        PlayMusic();
+        _warning.SetActive(false);
+    }
+
+    public void PressYesExit()
+    {
+        PlayMusic();
+        Application.Quit();
     }
 
     private void PlayMusic()

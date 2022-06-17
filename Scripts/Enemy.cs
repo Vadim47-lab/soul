@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private GameObject _expl;
     [SerializeField] private GameObject _crap;
     [SerializeField] private GameObject _effect;
-    [SerializeField] private GameObject _spawn;
+    [SerializeField] private GameObject _spawnEffect;
     [SerializeField] private Transform _lifeBar;
     [SerializeField] private Player _player;
     [SerializeField] private int _speed;
@@ -53,12 +53,12 @@ public class Enemy : MonoBehaviour
     private void GenerateCrap()
     {
         PlayMusic();
-        GameObject eff = Instantiate(_effect, _spawn.transform.position, transform.rotation);
-        eff.transform.SetParent(_spawn.transform);
-        Vector3 bulletPosition = _spawn.transform.position;
+        GameObject eff = Instantiate(_effect, _spawnEffect.transform.position, transform.rotation);
+        eff.transform.SetParent(_spawnEffect.transform);
+        Vector3 bulletPosition = _spawnEffect.transform.position;
         Vector2 bulletForce;
-        float x = _spawn.transform.position.x - transform.position.x;
-        float y = _spawn.transform.position.y - transform.position.y;
+        float x = _spawnEffect.transform.position.x - transform.position.x;
+        float y = _spawnEffect.transform.position.y - transform.position.y;
         bulletForce = new Vector2(x, y);
         GameObject bulletClone = Instantiate(_crap,
             bulletPosition,

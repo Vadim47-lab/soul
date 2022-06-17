@@ -352,29 +352,50 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 21027513, guid: 186d636964194d24cbb835d020acc31a, type: 3}
-      propertyPath: m_AnchorMax.x
+    - target: {fileID: 514995955926278992, guid: 186d636964194d24cbb835d020acc31a,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 21027513, guid: 186d636964194d24cbb835d020acc31a, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
+    - target: {fileID: 1490340529003240511, guid: 186d636964194d24cbb835d020acc31a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8527508264263733636}
+    - target: {fileID: 1490340529003240511, guid: 186d636964194d24cbb835d020acc31a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PressYesExit
       objectReference: {fileID: 0}
-    - target: {fileID: 21027513, guid: 186d636964194d24cbb835d020acc31a, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
+    - target: {fileID: 1490340529003240511, guid: 186d636964194d24cbb835d020acc31a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Win, Assembly-CSharp
       objectReference: {fileID: 0}
-    - target: {fileID: 21027513, guid: 186d636964194d24cbb835d020acc31a, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 21027513, guid: 186d636964194d24cbb835d020acc31a, type: 3}
+    - target: {fileID: 2114162917409167889, guid: 186d636964194d24cbb835d020acc31a,
+        type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 72
+      value: 363.68
       objectReference: {fileID: 0}
-    - target: {fileID: 21027513, guid: 186d636964194d24cbb835d020acc31a, type: 3}
+    - target: {fileID: 2114162917409167889, guid: 186d636964194d24cbb835d020acc31a,
+        type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -36.700012
+      value: -85.155
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550390573648967007, guid: 186d636964194d24cbb835d020acc31a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8527508264263733636}
+    - target: {fileID: 4550390573648967007, guid: 186d636964194d24cbb835d020acc31a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PressNo
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550390573648967007, guid: 186d636964194d24cbb835d020acc31a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Win, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7562600703317701056, guid: 186d636964194d24cbb835d020acc31a,
         type: 3}
@@ -488,6 +509,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 186d636964194d24cbb835d020acc31a, type: 3}
+--- !u!1 &7562600703410213683 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 514995955926278992, guid: 186d636964194d24cbb835d020acc31a,
+    type: 3}
+  m_PrefabInstance: {fileID: 7562600703410213682}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8527508264263733634
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -572,6 +599,11 @@ PrefabInstance:
       objectReference: {fileID: 827520238}
     - target: {fileID: 8527508263421823579, guid: 559cdcd2f1d53174c865ebe7da5cc273,
         type: 3}
+      propertyPath: _warning
+      value: 
+      objectReference: {fileID: 7562600703410213683}
+    - target: {fileID: 8527508263421823579, guid: 559cdcd2f1d53174c865ebe7da5cc273,
+        type: 3}
       propertyPath: _exitButton
       value: 
       objectReference: {fileID: 820681268}
@@ -592,3 +624,15 @@ PrefabInstance:
       objectReference: {fileID: 771909928}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 559cdcd2f1d53174c865ebe7da5cc273, type: 3}
+--- !u!114 &8527508264263733636 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8527508263421823579, guid: 559cdcd2f1d53174c865ebe7da5cc273,
+    type: 3}
+  m_PrefabInstance: {fileID: 8527508264263733634}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44aa41c30fc0fa945a08d8bd99cd1633, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
