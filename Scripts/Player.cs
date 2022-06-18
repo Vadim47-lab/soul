@@ -14,20 +14,30 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform _lifeBar;
     [SerializeField] private TMP_Text _textAmountEnemy;
     [SerializeField] private Enemy _enemy;
-    [SerializeField] private int _amountEnemy;
     [SerializeField] private float _speed;
     [SerializeField] private int _hp;
     [SerializeField] private float _rof;
     [SerializeField] private float _random;
+    [SerializeField] private int _amountEnemy;
 
-    private float _time;
     private int _score;
+    private float _time;
     private float _oldLifeBar;
 
     public event UnityAction<int> ScoreChanged;
 
     private void Start()
     {
+        if (SceneManager.GetActiveScene().name == "Exit")
+        {
+            _amountEnemy = 24;
+        }
+
+        if (SceneManager.GetActiveScene().name == "Soul")
+        {
+            _amountEnemy = 8;
+        }
+
         ShowAmountEnemy();
         _oldLifeBar = _lifeBar.localScale.x;
         _time = 0;
@@ -94,15 +104,14 @@ public class Player : MonoBehaviour
         _lifeBar.localScale = new Vector2(_oldLifeBar * _hp / 100, _lifeBar.localScale.y);
     }
 
-    private void DefeatedEnemy()
+    public void DefeatedEnemy()
     {
         if (_score == _amountEnemy && SceneManager.sceneCount == 1)
         {
             SceneManager.LoadScene(2);
         }
     }
-
-    private void ShowAmountEnemy()
+    public void ShowAmountEnemy()
     {
         _textAmountEnemy.text = _amountEnemy.ToString();
     }

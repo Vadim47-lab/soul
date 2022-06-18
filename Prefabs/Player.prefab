@@ -288,11 +288,12 @@ MonoBehaviour:
   _lifeBar: {fileID: 6199799159420342259}
   _textAmountEnemy: {fileID: 0}
   _enemy: {fileID: 1057121588067064788, guid: 6d3d4430d2e73da4f80e7a216d7e198a, type: 3}
-  _amountEnemy: 8
   _speed: 10
   _hp: 100
   _rof: 0.2
   _random: 0.5
+  _amountEnemy: 8
+  _amountEnemy2: 24
 --- !u!60 &4660527176548484875
 PolygonCollider2D:
   m_ObjectHideFlags: 0
