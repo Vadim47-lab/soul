@@ -1792,9 +1792,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 837cfc79a09ab5b459b9168dfd83012f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _buttonPress: {fileID: 8300000, guid: de4158309d4b8dd42bccc5dd8d8e441f, type: 3}
+  _music: {fileID: 8300000, guid: 502e8146f40f7c44bae6bc4f62c48f56, type: 3}
   _startButton: {fileID: 899373543}
   _exitButton: {fileID: 339314749}
-  _buttonPress: {fileID: 8300000, guid: de4158309d4b8dd42bccc5dd8d8e441f, type: 3}
   _warning: {fileID: 1078747368}
 --- !u!82 &1768110825
 AudioSource:
@@ -2111,7 +2112,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32.45
+  m_fontSize: 32.4
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

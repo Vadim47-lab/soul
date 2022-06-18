@@ -84,7 +84,7 @@ public class Player : MonoBehaviour
         if (_hp <= 0)
         {
             Instantiate(_expl, transform.position, transform.rotation);
-            Destroy(gameObject);
+            SceneManager.LoadScene(4);
         }
     }
 

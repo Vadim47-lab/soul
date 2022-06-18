@@ -3,32 +3,27 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(AudioSource))]
-public class Win : MonoBehaviour
+public class GameOverScreen : MonoBehaviour
 {
     [SerializeField] private AudioClip _buttonPress;
     [SerializeField] private AudioClip _music;
-    [SerializeField] private GameObject _present;
-    [SerializeField] private GameObject _toy;
-    [SerializeField] private GameObject _warning;
     [SerializeField] private Button _restartButton;
     [SerializeField] private Button _exitButton;
-    [SerializeField] private Button _mainMenuButton;
-    [SerializeField] private Button _presentButton;
+    [SerializeField] private Button _returnButton;
+    [SerializeField] private GameObject _warning;
 
     private void OnEnable()
     {
         _restartButton.onClick.AddListener(OnRestartButtonClick);
         _exitButton.onClick.AddListener(OnExitButtonClick);
-        _mainMenuButton.onClick.AddListener(OnMainMenuButtonClick);
-        _presentButton.onClick.AddListener(OnPresentButtonClick);
+        _returnButton.onClick.AddListener(OnReturnMenuButtonClick);
     }
 
     private void OnDisable()
     {
         _restartButton.onClick.RemoveListener(OnRestartButtonClick);
         _exitButton.onClick.RemoveListener(OnExitButtonClick);
-        _mainMenuButton.onClick.RemoveListener(OnMainMenuButtonClick);
-        _presentButton.onClick.RemoveListener(OnPresentButtonClick);
+        _returnButton.onClick.RemoveListener(OnReturnMenuButtonClick);
     }
 
     private void Start()
@@ -40,6 +35,7 @@ public class Win : MonoBehaviour
     {
         PlayMusic();
 
+        Time.timeScale = 1;
         SceneManager.LoadScene(1);
     }
 
@@ -50,19 +46,11 @@ public class Win : MonoBehaviour
         _warning.SetActive(true);
     }
 
-    private void OnMainMenuButtonClick()
+    private void OnReturnMenuButtonClick()
     {
         PlayMusic();
 
         SceneManager.LoadScene(0);
-    }
-
-    private void OnPresentButtonClick()
-    {
-        PlayMusic();
-
-        _present.SetActive(false);
-        _toy.SetActive(true);
     }
 
     public void PressNo()

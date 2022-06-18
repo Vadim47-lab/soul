@@ -5,9 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField] private AudioClip _buttonPress;
+    [SerializeField] private AudioClip _music;
     [SerializeField] private Button _startButton;
     [SerializeField] private Button _exitButton;
-    [SerializeField] private AudioClip _buttonPress;
     [SerializeField] private GameObject _warning;
 
     private void OnEnable()
@@ -20,6 +21,11 @@ public class MainMenu : MonoBehaviour
     {
         _startButton.onClick.RemoveListener(OnStartButtonClick);
         _exitButton.onClick.RemoveListener(OnExitButtonClick);
+    }
+
+    private void Start()
+    {
+        PlayMusic2();
     }
 
     private void OnStartButtonClick()
@@ -49,5 +55,10 @@ public class MainMenu : MonoBehaviour
     private void PlayMusic()
     {
         GetComponent<AudioSource>().PlayOneShot(_buttonPress);
+    }
+
+    private void PlayMusic2()
+    {
+        GetComponent<AudioSource>().PlayOneShot(_music);
     }
 }

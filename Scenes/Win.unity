@@ -397,6 +397,21 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Win, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 7562600702958108285, guid: 186d636964194d24cbb835d020acc31a,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7562600702958108285, guid: 186d636964194d24cbb835d020acc31a,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7562600702958108285, guid: 186d636964194d24cbb835d020acc31a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 188.7
+      objectReference: {fileID: 0}
     - target: {fileID: 7562600703317701056, guid: 186d636964194d24cbb835d020acc31a,
         type: 3}
       propertyPath: m_Pivot.x
@@ -592,6 +607,11 @@ PrefabInstance:
       propertyPath: _toy
       value: 
       objectReference: {fileID: 662216116}
+    - target: {fileID: 8527508263421823579, guid: 559cdcd2f1d53174c865ebe7da5cc273,
+        type: 3}
+      propertyPath: _music
+      value: 
+      objectReference: {fileID: 8300000, guid: 6b35ce631f01eb141986ba3c2ed27c4b, type: 3}
     - target: {fileID: 8527508263421823579, guid: 559cdcd2f1d53174c865ebe7da5cc273,
         type: 3}
       propertyPath: _present

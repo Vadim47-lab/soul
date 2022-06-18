@@ -4105,12 +4105,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 474069940}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1358135294 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6199799159420342259, guid: d6210e65d03e7ca41a2e42a0f86ee18c,
-    type: 3}
-  m_PrefabInstance: {fileID: 4660527177416202695}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1478189286
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6088,16 +6082,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4660527176548484877, guid: d6210e65d03e7ca41a2e42a0f86ee18c,
-        type: 3}
-      propertyPath: _lifeBar
-      value: 
-      objectReference: {fileID: 1358135294}
-    - target: {fileID: 4660527176548484877, guid: d6210e65d03e7ca41a2e42a0f86ee18c,
-        type: 3}
-      propertyPath: _amountEnemy
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4660527176548484877, guid: d6210e65d03e7ca41a2e42a0f86ee18c,
         type: 3}

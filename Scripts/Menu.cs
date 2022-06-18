@@ -17,6 +17,11 @@ public class Menu : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        Time.timeScale = 1;
+    }
+
     public void OpenMenu()
     {
         PlayMusic();
@@ -34,6 +39,7 @@ public class Menu : MonoBehaviour
     {
         PlayMusic();
         _warning1.SetActive(true);
+        _warning2.SetActive(false);
     }
 
     public void PressYesReturnMenu()
@@ -59,6 +65,7 @@ public class Menu : MonoBehaviour
     {
         PlayMusic();
         _warning2.SetActive(true);
+        _warning1.SetActive(false);
     }
 
     private void PlayMusic()
