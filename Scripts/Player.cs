@@ -13,7 +13,10 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject _spawn;
     [SerializeField] private Transform _lifeBar;
     [SerializeField] private AmountEnemy _amountEnemy;
+    [SerializeField] private HealthBar _healthBar;
+    [SerializeField] private Cartridge _cartridge;
     [SerializeField] private Enemy _enemy;
+
     [SerializeField] private float _speed;
     [SerializeField] private int _hp;
     [SerializeField] private float _rof;
@@ -23,17 +26,18 @@ public class Player : MonoBehaviour
     private int _score;
     private float _time;
     private float _oldLifeBar;
+    private readonly float _x = 1.75f;
 
     public event UnityAction<int> ScoreChanged;
 
     private void Start()
     {
-        if (SceneManager.GetActiveScene().name == "Exit")
+        if (SceneManager.sceneCount == 2)
         {
             _countEnemy = 24;
         }
 
-        if (SceneManager.GetActiveScene().name == "Soul")
+        if (SceneManager.sceneCount == 1)
         {
             _countEnemy = 8;
         }
@@ -70,7 +74,8 @@ public class Player : MonoBehaviour
 
         if (Input.GetMouseButton(0) && _time <= 0)
         {
-            GenerateBullet();
+            _cartridge.GenerateBullet(_effect, _spawn, _bullet, _speed);
+            PlayMusic();
 
             _time = _rof;
         }
@@ -89,7 +94,7 @@ public class Player : MonoBehaviour
     {
         PlayMusic();
         _hp -= damage;
-        HealthBar();
+        _healthBar.ChangedHealthBar(_x, _lifeBar, _oldLifeBar, _hp);
 
         if (_hp <= 0)
         {
@@ -98,34 +103,12 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void HealthBar()
-    {
-        _lifeBar.localPosition = new Vector2(1.75f * _hp / 100 - 1.75f, _lifeBar.localPosition.y);
-        _lifeBar.localScale = new Vector2(_oldLifeBar * _hp / 100, _lifeBar.localScale.y);
-    }
-
     public void DefeatedEnemy()
     {
         if (_score == _countEnemy && SceneManager.sceneCount == 1)
         {
             SceneManager.LoadScene(2);
         }
-    }
-
-    private void GenerateBullet()
-    {
-        PlayMusic();
-        GameObject eff = Instantiate(_effect, _spawn.transform.position, transform.rotation);
-        eff.transform.SetParent(_spawn.transform);
-        Vector3 bulletPosition = _spawn.transform.position;
-        Vector2 bulletForce;
-        float x = _spawn.transform.position.x - transform.position.x;
-        float y = _spawn.transform.position.y - transform.position.y;
-        bulletForce = new Vector2(x, y);
-        GameObject bulletClone = Instantiate(_bullet, 
-            bulletPosition, 
-            transform.rotation) as GameObject;
-        bulletClone.GetComponent<Rigidbody2D>().velocity = bulletForce * _speed;
     }
 
     private void PlayMusic()

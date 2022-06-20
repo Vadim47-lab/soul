@@ -6099,20 +6099,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4660527176548484877, guid: d6210e65d03e7ca41a2e42a0f86ee18c,
         type: 3}
-      propertyPath: _explosion
-      value: 
-      objectReference: {fileID: 6722502250348852914, guid: f0a90688489bd994080e463cf307b0ce,
-        type: 3}
-    - target: {fileID: 4660527176548484877, guid: d6210e65d03e7ca41a2e42a0f86ee18c,
-        type: 3}
       propertyPath: _amountEnemy
       value: 
       objectReference: {fileID: 1261092839}
-    - target: {fileID: 4660527176548484877, guid: d6210e65d03e7ca41a2e42a0f86ee18c,
-        type: 3}
-      propertyPath: _textAmountEnemy
-      value: 
-      objectReference: {fileID: 990210163}
     - target: {fileID: 4660527176548484879, guid: d6210e65d03e7ca41a2e42a0f86ee18c,
         type: 3}
       propertyPath: m_Name

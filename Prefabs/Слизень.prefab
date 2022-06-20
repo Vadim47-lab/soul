@@ -93,6 +93,8 @@ GameObject:
   - component: {fileID: 1057121588067064791}
   - component: {fileID: 1057121588067064792}
   - component: {fileID: 1057121588067064788}
+  - component: {fileID: -3149090332673596550}
+  - component: {fileID: -3269247656731572832}
   - component: {fileID: 1057121588067064787}
   - component: {fileID: 1057121588067064790}
   - component: {fileID: 1057121588067064789}
@@ -191,9 +193,35 @@ MonoBehaviour:
   _spawnEffect: {fileID: 5929159066010597177}
   _rigidbody2D: {fileID: 1057121588067064789}
   _lifeBar: {fileID: 7838250924766510113}
+  _healthBar: {fileID: -3149090332673596550}
+  _cartridge: {fileID: -3269247656731572832}
   _player: {fileID: 4660527176548484877, guid: d6210e65d03e7ca41a2e42a0f86ee18c, type: 3}
   _speed: 30
   _hp: 100
+--- !u!114 &-3149090332673596550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057121588067064793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ca2f4f82ac1bb94ca42e678ef4d1a29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-3269247656731572832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057121588067064793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4918f212b9811741b4bc353e211fce4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!60 &1057121588067064787
 PolygonCollider2D:
   m_ObjectHideFlags: 0
