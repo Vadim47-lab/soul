@@ -15,6 +15,8 @@ public class Win : MonoBehaviour
     [SerializeField] private Button _mainMenuButton;
     [SerializeField] private Button _presentButton;
 
+    private bool _playSong = false;
+
     private void OnEnable()
     {
         _restartButton.onClick.AddListener(OnRestartButtonClick);
@@ -33,7 +35,8 @@ public class Win : MonoBehaviour
 
     private void Start()
     {
-        PlayMusic2();
+        PlayMusic();
+        _playSong = true;
     }
 
     private void OnRestartButtonClick()
@@ -76,14 +79,16 @@ public class Win : MonoBehaviour
         PlayMusic();
         Application.Quit();
     }
-
     private void PlayMusic()
     {
-        GetComponent<AudioSource>().PlayOneShot(_buttonPress);
-    }
+        if (_playSong == true)
+        {
+            GetComponent<AudioSource>().PlayOneShot(_buttonPress);
+        }
 
-    private void PlayMusic2()
-    {
-        GetComponent<AudioSource>().PlayOneShot(_music);
+        if (_playSong == false)
+        {
+            GetComponent<AudioSource>().PlayOneShot(_music);
+        }
     }
 }

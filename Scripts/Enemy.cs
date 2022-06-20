@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour
         var y = Random.Range(-_speed, _speed);
 
         //_rigidbody2D =
-        GetComponent<Rigidbody2D>().AddForce(new Vector2(x, y) * _speed, ForceMode2D.Force);
+         GetComponent<Rigidbody2D>().AddForce(new Vector2(x, y) * _speed, ForceMode2D.Force);
     }
 
     public void TakeDamage(int damage)
