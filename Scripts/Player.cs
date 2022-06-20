@@ -32,14 +32,14 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        if (SceneManager.sceneCount == 2)
-        {
-            _countEnemy = 24;
-        }
-
         if (SceneManager.sceneCount == 1)
         {
             _countEnemy = 8;
+        }
+
+        else if (SceneManager.sceneCount == 2)
+        {
+            _countEnemy = 24;
         }
 
         _amountEnemy.ShowAmountEnemy(_countEnemy);

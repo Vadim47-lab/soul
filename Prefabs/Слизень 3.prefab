@@ -280,8 +280,8 @@ MonoBehaviour:
     type: 3}
   _cartridge: {fileID: -3269247656731572832, guid: 6d3d4430d2e73da4f80e7a216d7e198a,
     type: 3}
-  _player: {fileID: 4660527176548484877, guid: d6210e65d03e7ca41a2e42a0f86ee18c, type: 3}
-  _speed: 30
+  _player: {fileID: 0}
+  _speed: 10
   _hp: 100
 --- !u!114 &1882159472110604572
 MonoBehaviour:

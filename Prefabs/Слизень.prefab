@@ -196,7 +196,7 @@ MonoBehaviour:
   _healthBar: {fileID: -3149090332673596550}
   _cartridge: {fileID: -3269247656731572832}
   _player: {fileID: 4660527176548484877, guid: d6210e65d03e7ca41a2e42a0f86ee18c, type: 3}
-  _speed: 30
+  _speed: 10
   _hp: 100
 --- !u!114 &-3149090332673596550
 MonoBehaviour:
