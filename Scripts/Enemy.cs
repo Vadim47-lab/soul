@@ -25,11 +25,12 @@ public class Enemy : MonoBehaviour
 
     private void Move()
     {
+        _rigidbody2D = GetComponent<Rigidbody2D>();
+
         var x = Random.Range(-_speed, _speed);
         var y = Random.Range(-_speed, _speed);
 
-        //_rigidbody2D =
-         GetComponent<Rigidbody2D>().AddForce(new Vector2(x, y) * _speed, ForceMode2D.Force);
+        _rigidbody2D.AddForce(new Vector2(x, y) * _speed, ForceMode2D.Force);
     }
 
     public void TakeDamage(int damage)
