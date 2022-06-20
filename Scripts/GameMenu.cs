@@ -12,8 +12,7 @@ public class GameMenu: MonoBehaviour
     [SerializeField] private Button _returnButton;
     [SerializeField] private GameObject _warning;
 
-    private bool _song1 = false;
-    private bool _song2 = false;
+    private bool _playSong = false;
 
     private void OnEnable()
     {
@@ -31,62 +30,52 @@ public class GameMenu: MonoBehaviour
 
     private void Start()
     {
-        _song2 = true;
         PlayMusic();
-        _song2 = false;
+        _playSong = true;
     }
 
     private void OnRestartButtonClick()
     {
-        _song1 = true;
         PlayMusic();
 
         Time.timeScale = 1;
         SceneManager.LoadScene(1);
-        _song1 = false;
     }
 
     private void OnExitButtonClick()
     {
-        _song1 = true;
         PlayMusic();
 
         _warning.SetActive(true);
-        _song1 = false;
     }
 
     private void OnReturnMenuButtonClick()
     {
-        _song1 = true;
         PlayMusic();
 
         SceneManager.LoadScene(0);
-        _song1 = false;
     }
 
     public void PressNo()
     {
-        _song1 = true;
         PlayMusic();
         _warning.SetActive(false);
-        _song1 = false;
     }
 
     public void PressYesExit()
     {
-        _song1 = true;
         PlayMusic();
         Application.Quit();
     }
 
     private void PlayMusic()
     {
-        if (_song1 == true && _song2 == false)
+        if (_playSong == true)
         {
             GetComponent<AudioSource>().PlayOneShot(_buttonPress);
         }
 
-        if (_song2 == true && _song1 == false)
+        if (_playSong == false)
         {
             GetComponent<AudioSource>().PlayOneShot(_music);
         }
