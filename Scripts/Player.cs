@@ -7,18 +7,18 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     [SerializeField] private AudioClip _shoot;
-    [SerializeField] private GameObject _expl;
+    [SerializeField] private GameObject _explosion;
     [SerializeField] private GameObject _bullet;
     [SerializeField] private GameObject _effect;
     [SerializeField] private GameObject _spawn;
     [SerializeField] private Transform _lifeBar;
-    [SerializeField] private TMP_Text _textAmountEnemy;
+    [SerializeField] private AmountEnemy _amountEnemy;
     [SerializeField] private Enemy _enemy;
     [SerializeField] private float _speed;
     [SerializeField] private int _hp;
     [SerializeField] private float _rof;
     [SerializeField] private float _random;
-    [SerializeField] private int _amountEnemy;
+    [SerializeField] private int _countEnemy;
 
     private int _score;
     private float _time;
@@ -30,15 +30,15 @@ public class Player : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "Exit")
         {
-            _amountEnemy = 24;
+            _countEnemy = 24;
         }
 
         if (SceneManager.GetActiveScene().name == "Soul")
         {
-            _amountEnemy = 8;
+            _countEnemy = 8;
         }
 
-        ShowAmountEnemy();
+        _amountEnemy.ShowAmountEnemy(_countEnemy);
         _oldLifeBar = _lifeBar.localScale.x;
         _time = 0;
     }
@@ -93,7 +93,7 @@ public class Player : MonoBehaviour
 
         if (_hp <= 0)
         {
-            Instantiate(_expl, transform.position, transform.rotation);
+            Instantiate(_explosion, transform.position, transform.rotation);
             SceneManager.LoadScene(4);
         }
     }
@@ -106,14 +106,10 @@ public class Player : MonoBehaviour
 
     public void DefeatedEnemy()
     {
-        if (_score == _amountEnemy && SceneManager.sceneCount == 1)
+        if (_score == _countEnemy && SceneManager.sceneCount == 1)
         {
             SceneManager.LoadScene(2);
         }
-    }
-    public void ShowAmountEnemy()
-    {
-        _textAmountEnemy.text = _amountEnemy.ToString();
     }
 
     private void GenerateBullet()

@@ -4,10 +4,11 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private AudioClip _takeDamage;
-    [SerializeField] private GameObject _expl;
+    [SerializeField] private GameObject _explosion;
     [SerializeField] private GameObject _crap;
     [SerializeField] private GameObject _effect;
     [SerializeField] private GameObject _spawnEffect;
+    [SerializeField] private Rigidbody2D _rigidbody2D;
     [SerializeField] private Transform _lifeBar;
     [SerializeField] private Player _player;
     [SerializeField] private int _speed;
@@ -18,8 +19,8 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         _oldLifeBar = _lifeBar.localScale.x;
-        InvokeRepeating("Move", 1, 1);
-        InvokeRepeating("GenerateCrap", 1, 3);
+        InvokeRepeating(nameof(Move), 1, 1);
+        InvokeRepeating(nameof(GenerateCrap), 1, 3);
     }
 
     private void Move()
@@ -27,6 +28,7 @@ public class Enemy : MonoBehaviour
         var x = Random.Range(-_speed, _speed);
         var y = Random.Range(-_speed, _speed);
 
+        //_rigidbody2D =
         GetComponent<Rigidbody2D>().AddForce(new Vector2(x, y) * _speed, ForceMode2D.Force);
     }
 
@@ -38,7 +40,7 @@ public class Enemy : MonoBehaviour
 
         if (_hp <= 0)
         {
-            Instantiate(_expl, transform.position, transform.rotation);
+            Instantiate(_explosion, transform.position, transform.rotation);
             Destroy(gameObject);
             _player.IncreaseScore();
         }

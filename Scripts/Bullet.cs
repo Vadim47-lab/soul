@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    [SerializeField] private Destruction _destruction;
+    [SerializeField] private GameObject _explosion;
     [SerializeField] private float _time;
     [SerializeField] private int _damage;
-    [SerializeField] private GameObject _expl;
 
     private void Start()
     {
@@ -16,8 +17,7 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.TryGetComponent(out Enemy enemy))
         {
             enemy.TakeDamage(_damage);
-            Instantiate(_expl, transform.position, transform.rotation);
-            Destroy(gameObject);
+            _destruction.EffectDestroys(_explosion);
         }
     }
 }

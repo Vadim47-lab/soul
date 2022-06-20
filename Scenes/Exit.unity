@@ -379,9 +379,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4660527176548484877, guid: d6210e65d03e7ca41a2e42a0f86ee18c,
         type: 3}
-      propertyPath: _textAmountEnemy
+      propertyPath: _amountEnemy
       value: 
-      objectReference: {fileID: 219099426}
+      objectReference: {fileID: 1896755546}
     - target: {fileID: 4660527176548484879, guid: d6210e65d03e7ca41a2e42a0f86ee18c,
         type: 3}
       propertyPath: m_Name
@@ -2183,8 +2183,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d38d5a41457c1564b88e5a574493a2e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _amountEnemy: 24
-  _textAmountEnemy: {fileID: 219099426}
 --- !u!1001 &461303861
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7143,6 +7141,7 @@ GameObject:
   - component: {fileID: 1896755543}
   - component: {fileID: 1896755542}
   - component: {fileID: 1896755541}
+  - component: {fileID: 1896755546}
   - component: {fileID: 1896755540}
   m_Layer: 5
   m_Name: Canvas
@@ -7347,6 +7346,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1896755546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896755539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 005c966a9af648b4caa4644e147323f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _textAmountEnemy: {fileID: 219099426}
 --- !u!1 &2000950676
 GameObject:
   m_ObjectHideFlags: 0

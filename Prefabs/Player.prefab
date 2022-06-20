@@ -281,19 +281,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shoot: {fileID: 8300000, guid: e82d18105959cf1408e0d3c49a2a2a10, type: 3}
-  _expl: {fileID: 6722502250348852914, guid: f0a90688489bd994080e463cf307b0ce, type: 3}
+  _explosion: {fileID: 6722502250348852914, guid: f0a90688489bd994080e463cf307b0ce,
+    type: 3}
   _bullet: {fileID: 1964873317845458516, guid: 8ede5e4902b48ad418ffe6022b05b626, type: 3}
   _effect: {fileID: 4611805243479610731, guid: fca9ea73ac513ea41b3bdd26155dff61, type: 3}
   _spawn: {fileID: 4660527177474272021}
   _lifeBar: {fileID: 6199799159420342259}
-  _textAmountEnemy: {fileID: 0}
+  _amountEnemy: {fileID: 0}
   _enemy: {fileID: 1057121588067064788, guid: 6d3d4430d2e73da4f80e7a216d7e198a, type: 3}
   _speed: 10
   _hp: 100
   _rof: 0.2
   _random: 0.5
-  _amountEnemy: 8
-  _amountEnemy2: 24
+  _countEnemy: 8
 --- !u!60 &4660527176548484875
 PolygonCollider2D:
   m_ObjectHideFlags: 0
