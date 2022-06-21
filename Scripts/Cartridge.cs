@@ -8,12 +8,10 @@ public class Cartridge : MonoBehaviour
         eff.transform.SetParent(spawn.transform);
         Vector3 bulletPosition = spawn.transform.position;
         Vector2 bulletForce;
-        float x = spawn.transform.position.x - transform.position.x;
-        float y = spawn.transform.position.y - transform.position.y;
-        bulletForce = new Vector2(x, y);
+        bulletForce = spawn.transform.position - transform.position;
         Bullet bulletClone = Instantiate(bullet,
             bulletPosition,
             transform.rotation);
-        bulletClone.TakeRigidbody2D.velocity = bulletForce * speed;
+        bulletClone.GetRigidbody2D.velocity = bulletForce * speed;
     }
 }
