@@ -7,6 +7,7 @@ public class Win : MonoBehaviour
 {
     [SerializeField] private AudioClip _buttonPress;
     [SerializeField] private AudioClip _music;
+    [SerializeField] private AudioSource _audioSource;
     [SerializeField] private GameObject _present;
     [SerializeField] private GameObject _toy;
     [SerializeField] private GameObject _warning;
@@ -35,6 +36,7 @@ public class Win : MonoBehaviour
 
     private void Start()
     {
+        _audioSource = GetComponent<AudioSource>();
         PlayMusic();
         _playSong = true;
     }
@@ -83,12 +85,12 @@ public class Win : MonoBehaviour
     {
         if (_playSong == true)
         {
-            GetComponent<AudioSource>().PlayOneShot(_buttonPress);
+            _audioSource.PlayOneShot(_buttonPress);
         }
 
         if (_playSong == false)
         {
-            GetComponent<AudioSource>().PlayOneShot(_music);
+            _audioSource.PlayOneShot(_music);
         }
     }
 }

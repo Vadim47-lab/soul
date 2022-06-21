@@ -379,7 +379,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4660527176548484877, guid: d6210e65d03e7ca41a2e42a0f86ee18c,
         type: 3}
+      propertyPath: _bullet
+      value: 
+      objectReference: {fileID: -6882861883636712367, guid: 8ede5e4902b48ad418ffe6022b05b626,
+        type: 3}
+    - target: {fileID: 4660527176548484877, guid: d6210e65d03e7ca41a2e42a0f86ee18c,
+        type: 3}
       propertyPath: _amountEnemy
+      value: 
+      objectReference: {fileID: 1896755546}
+    - target: {fileID: 4660527176548484877, guid: d6210e65d03e7ca41a2e42a0f86ee18c,
+        type: 3}
+      propertyPath: _enemyDisplay
       value: 
       objectReference: {fileID: 1896755546}
     - target: {fileID: 4660527176548484879, guid: d6210e65d03e7ca41a2e42a0f86ee18c,
@@ -7259,6 +7270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _buttonPress: {fileID: 8300000, guid: de4158309d4b8dd42bccc5dd8d8e441f, type: 3}
+  _audioSource: {fileID: 0}
   _menu: {fileID: 950326907}
   _warning1: {fileID: 523365573}
   _warning2: {fileID: 1132620378}

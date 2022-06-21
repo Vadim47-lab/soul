@@ -189,7 +189,8 @@ MonoBehaviour:
   _takeDamage: {fileID: 8300000, guid: 7c89584eea213d549bbf79b57ecd45b9, type: 3}
   _explosion: {fileID: 6722502250348852914, guid: f0a90688489bd994080e463cf307b0ce,
     type: 3}
-  _crap: {fileID: 2190101452533932506, guid: e4d88121fbd81a144876db340ae3a0ff, type: 3}
+  _bullet: {fileID: -8608078605058399480, guid: e4d88121fbd81a144876db340ae3a0ff,
+    type: 3}
   _effect: {fileID: 4611805243479610731, guid: fca9ea73ac513ea41b3bdd26155dff61, type: 3}
   _spawnEffect: {fileID: 5711701571520461250}
   _rigidbody2D: {fileID: 1416160991564993838}

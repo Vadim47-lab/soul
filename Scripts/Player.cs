@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -8,11 +7,11 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private AudioClip _shoot;
     [SerializeField] private GameObject _explosion;
-    [SerializeField] private GameObject _bullet;
+    [SerializeField] private Bullet _bullet;
     [SerializeField] private GameObject _effect;
     [SerializeField] private GameObject _spawn;
     [SerializeField] private Transform _lifeBar;
-    [SerializeField] private AmountEnemy _amountEnemy;
+    [SerializeField] private EnemyDisplay _enemyDisplay;
     [SerializeField] private HealthBar _healthBar;
     [SerializeField] private Cartridge _cartridge;
     [SerializeField] private Enemy _enemy;
@@ -42,7 +41,7 @@ public class Player : MonoBehaviour
             _countEnemy = 24;
         }
 
-        _amountEnemy.ShowAmountEnemy(_countEnemy);
+        _enemyDisplay.ShowAmountEnemy(_countEnemy);
         _oldLifeBar = _lifeBar.localScale.x;
         _time = 0;
     }

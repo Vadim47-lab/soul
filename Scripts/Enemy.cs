@@ -1,11 +1,12 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(AudioSource))]
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private AudioClip _takeDamage;
     [SerializeField] private GameObject _explosion;
-    [SerializeField] private GameObject _crap;
+    [SerializeField] private Bullet _bullet;
     [SerializeField] private GameObject _effect;
     [SerializeField] private GameObject _spawnEffect;
     [SerializeField] private Rigidbody2D _rigidbody2D;
@@ -21,6 +22,7 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
+        _rigidbody2D = GetComponent<Rigidbody2D>();
         _oldLifeBar = _lifeBar.localScale.x;
         InvokeRepeating(nameof(Move), 1, 1);
         InvokeRepeating(nameof(GenerateBullet), 1, 3);
@@ -28,13 +30,11 @@ public class Enemy : MonoBehaviour
 
     private void GenerateBullet()
     {
-        _cartridge.GenerateBullet(_effect, _spawnEffect, _crap, _speed);
+        _cartridge.GenerateBullet(_effect, _spawnEffect, _bullet, _speed);
     }
 
     private void Move()
     {
-        _rigidbody2D = GetComponent<Rigidbody2D>();
-
         var x = Random.Range(-_speed, _speed);
         var y = Random.Range(-_speed, _speed);
 

@@ -7,6 +7,7 @@ public class GameMenu: MonoBehaviour
 {
     [SerializeField] private AudioClip _buttonPress;
     [SerializeField] private AudioClip _music;
+    [SerializeField] private AudioSource _audioSource;
     [SerializeField] private Button _restartButton;
     [SerializeField] private Button _exitButton;
     [SerializeField] private Button _returnButton;
@@ -30,6 +31,7 @@ public class GameMenu: MonoBehaviour
 
     private void Start()
     {
+        _audioSource = GetComponent<AudioSource>();
         PlayMusic();
         _playSong = true;
     }
@@ -72,12 +74,12 @@ public class GameMenu: MonoBehaviour
     {
         if (_playSong == true)
         {
-            GetComponent<AudioSource>().PlayOneShot(_buttonPress);
+            _audioSource.PlayOneShot(_buttonPress);
         }
 
         if (_playSong == false)
         {
-            GetComponent<AudioSource>().PlayOneShot(_music);
+            _audioSource.PlayOneShot(_music);
         }
     }
 }

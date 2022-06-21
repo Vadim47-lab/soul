@@ -101,6 +101,7 @@ MonoBehaviour:
   _destruction: {fileID: -2869336872265465748}
   _explosion: {fileID: 448995755626997196, guid: d3e5323bc0d963f46ab1102241f99615,
     type: 3}
+  _rigidbody2D: {fileID: 7814573379793102934}
   _time: 2
   _damage: 25
 --- !u!114 &-2869336872265465748

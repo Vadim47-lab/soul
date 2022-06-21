@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class Menu : MonoBehaviour
 {
     [SerializeField] private AudioClip _buttonPress;
+    [SerializeField] private AudioSource _audioSource;
     [SerializeField] private GameObject _menu;
     [SerializeField] private GameObject _warning1;
     [SerializeField] private GameObject _warning2;
@@ -19,6 +20,7 @@ public class Menu : MonoBehaviour
 
     private void Start()
     {
+        _audioSource = GetComponent<AudioSource>();
         Time.timeScale = 1;
     }
 
@@ -70,6 +72,6 @@ public class Menu : MonoBehaviour
 
     private void PlayMusic()
     {
-        GetComponent<AudioSource>().PlayOneShot(_buttonPress);
+        _audioSource.PlayOneShot(_buttonPress);
     }
 }

@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class AmountEnemy : MonoBehaviour
+public class EnemyDisplay : MonoBehaviour
 {
     [SerializeField] private TMP_Text _textAmountEnemy;
 
