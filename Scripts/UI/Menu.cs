@@ -1,14 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-[RequireComponent(typeof(AudioSource))]
 public class Menu : MonoBehaviour
 {
-    [SerializeField] private AudioClip _buttonPress;
-    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private Press _press;
+    [SerializeField] private Warning _warning;
     [SerializeField] private GameObject _menu;
-    [SerializeField] private GameObject _warning1;
-    [SerializeField] private GameObject _warning2;
 
     private void Update()
     {
@@ -20,58 +17,49 @@ public class Menu : MonoBehaviour
 
     private void Start()
     {
-        _audioSource = GetComponent<AudioSource>();
         Time.timeScale = 1;
     }
 
     public void OpenMenu()
     {
-        PlayMusic();
+        _press.PlayButtonPress();
         Time.timeScale = 0;
         _menu.SetActive(true);
     }
 
     public void CloseMenu()
     {
-        PlayMusic();
+        _press.PlayButtonPress();
         _menu.SetActive(false);
         Time.timeScale = 1;
     }
     public void ReturnMenu()
     {
-        PlayMusic();
-        _warning1.SetActive(true);
-        _warning2.SetActive(false);
+        _press.PlayButtonPress();
+        _warning.WarningReturnBecomeTrue();
     }
 
     public void PressYesReturnMenu()
     {
-        PlayMusic();
+        _press.PlayButtonPress();
         SceneManager.LoadScene(0);
     }
 
     public void PressYesExit()
     {
-        PlayMusic();
+        _press.PlayButtonPress();
         Application.Quit();
     }
 
     public void PressNo()
     {
-        PlayMusic();
-        _warning1.SetActive(false);
-        _warning2.SetActive(false);
+        _press.PlayButtonPress();
+        _warning.WarningBecomeFalse();
     }
 
     public void Exit()
     {
-        PlayMusic();
-        _warning2.SetActive(true);
-        _warning1.SetActive(false);
-    }
-
-    private void PlayMusic()
-    {
-        _audioSource.PlayOneShot(_buttonPress);
+        _press.PlayButtonPress();
+        _warning.WarningExitBecomeTrue();
     }
 }

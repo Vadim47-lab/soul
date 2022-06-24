@@ -2,16 +2,17 @@
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-[RequireComponent(typeof(AudioSource))]
-public class GameMenu: MonoBehaviour
+public class Win : MonoBehaviour
 {
-    [SerializeField] private AudioClip _buttonPress;
-    [SerializeField] private AudioClip _music;
-    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private Warning _warning;
+    [SerializeField] private Present _present;
+    [SerializeField] private Press _press;
+    [SerializeField] private Fon _fon;
+    [SerializeField] private Toy _toy;
     [SerializeField] private Button _restartButton;
     [SerializeField] private Button _exitButton;
-    [SerializeField] private Button _returnButton;
-    [SerializeField] private GameObject _warning;
+    [SerializeField] private Button _mainMenuButton;
+    [SerializeField] private Button _presentButton;
 
     private bool _playSong = false;
 
@@ -19,19 +20,20 @@ public class GameMenu: MonoBehaviour
     {
         _restartButton.onClick.AddListener(OnRestartButtonClick);
         _exitButton.onClick.AddListener(OnExitButtonClick);
-        _returnButton.onClick.AddListener(OnReturnMenuButtonClick);
+        _mainMenuButton.onClick.AddListener(OnMainMenuButtonClick);
+        _presentButton.onClick.AddListener(OnPresentButtonClick);
     }
 
     private void OnDisable()
     {
         _restartButton.onClick.RemoveListener(OnRestartButtonClick);
         _exitButton.onClick.RemoveListener(OnExitButtonClick);
-        _returnButton.onClick.RemoveListener(OnReturnMenuButtonClick);
+        _mainMenuButton.onClick.RemoveListener(OnMainMenuButtonClick);
+        _presentButton.onClick.RemoveListener(OnPresentButtonClick);
     }
 
     private void Start()
     {
-        _audioSource = GetComponent<AudioSource>();
         PlayMusic();
         _playSong = true;
     }
@@ -39,29 +41,32 @@ public class GameMenu: MonoBehaviour
     private void OnRestartButtonClick()
     {
         PlayMusic();
-
-        Time.timeScale = 1;
         SceneManager.LoadScene(1);
     }
 
     private void OnExitButtonClick()
     {
         PlayMusic();
-
-        _warning.SetActive(true);
+        _warning.WarningExitBecomeTrue();
     }
 
-    private void OnReturnMenuButtonClick()
+    private void OnMainMenuButtonClick()
     {
         PlayMusic();
-
         SceneManager.LoadScene(0);
+    }
+
+    private void OnPresentButtonClick()
+    {
+        PlayMusic();
+        _present.GameObjectDisappears();
+        _toy.GameObjectDisappears();
     }
 
     public void PressNo()
     {
         PlayMusic();
-        _warning.SetActive(false);
+        _warning.WarningBecomeFalse();
     }
 
     public void PressYesExit()
@@ -69,17 +74,16 @@ public class GameMenu: MonoBehaviour
         PlayMusic();
         Application.Quit();
     }
-
     private void PlayMusic()
     {
         if (_playSong == true)
         {
-            _audioSource.PlayOneShot(_buttonPress);
+            _press.PlayButtonPress();
         }
 
         if (_playSong == false)
         {
-            _audioSource.PlayOneShot(_music);
+            _fon.PlayFonMusic();
         }
     }
 }

@@ -2,9 +2,23 @@ using UnityEngine;
 
 public class Destruction : MonoBehaviour
 {
-    public void EffectDestroys(GameObject explosion)
+    [SerializeField] private GameObject _hitEffect;
+    [SerializeField] private GameObject _killEffect;
+
+    public void HitEffect()
     {
-        Instantiate(explosion, transform.position, transform.rotation);
+        Instantiate(_hitEffect, transform.position, transform.rotation);
+        DestroyGameObject();
+    }
+
+    public void KillEffect()
+    {
+        Instantiate(_killEffect, transform.position, transform.rotation);
+        DestroyGameObject();
+    }
+
+    private void DestroyGameObject()
+    {
         Destroy(gameObject);
     }
 }

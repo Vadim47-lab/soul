@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CameraController : MonoBehaviour
+public class Camera : MonoBehaviour
 {
     [SerializeField] private GameObject _player;
 

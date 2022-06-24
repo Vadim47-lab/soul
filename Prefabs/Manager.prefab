@@ -11,6 +11,16 @@ GameObject:
   - component: {fileID: 8527508263421823578}
   - component: {fileID: 8527508263421823579}
   - component: {fileID: 64463273704534143}
+  - component: {fileID: 7124620130830815553}
+  - component: {fileID: 5421448353435374420}
+  - component: {fileID: 8527508264263733637}
+  - component: {fileID: 3103566743096580966}
+  - component: {fileID: 7007216857632070393}
+  - component: {fileID: 9002136125472782511}
+  - component: {fileID: 8220526044187339840}
+  - component: {fileID: 6384718242133271961}
+  - component: {fileID: 5930924038810923652}
+  - component: {fileID: 2539952314744024576}
   - component: {fileID: 8527508264263733636}
   m_Layer: 0
   m_Name: Manager
@@ -45,9 +55,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44aa41c30fc0fa945a08d8bd99cd1633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buttonPress: {fileID: 8300000, guid: de4158309d4b8dd42bccc5dd8d8e441f, type: 3}
-  _present: {fileID: 0}
-  _toy: {fileID: 0}
+  _warning: {fileID: 3103566743096580966}
+  _present: {fileID: 7007216857632070393}
+  _press: {fileID: 7124620130830815553}
+  _fon: {fileID: 5421448353435374420}
+  _toy: {fileID: 9002136125472782511}
   _restartButton: {fileID: 0}
   _exitButton: {fileID: 0}
   _mainMenuButton: {fileID: 0}
@@ -64,8 +76,150 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49a9d5696748dfe49a8849186d26211e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 4660527176548484877, guid: d6210e65d03e7ca41a2e42a0f86ee18c, type: 3}
-  _score: {fileID: 0}
+  _enemy: {fileID: 0}
+  _enemyDisplay: {fileID: 8527508264263733637}
+  _scoreText: {fileID: 0}
+--- !u!114 &7124620130830815553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8527508263421823573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa26bf02f60324498e6ad1235af6b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _buttonPress: {fileID: 8300000, guid: de4158309d4b8dd42bccc5dd8d8e441f, type: 3}
+  _audioSource: {fileID: 8527508264263733636}
+--- !u!114 &5421448353435374420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8527508263421823573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 583ad2db07043c941b8b8c98bd6d9918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fonMusic: {fileID: 8300000, guid: 6b35ce631f01eb141986ba3c2ed27c4b, type: 3}
+  _audioSource: {fileID: 8527508264263733636}
+--- !u!114 &8527508264263733637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8527508263421823573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 005c966a9af648b4caa4644e147323f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _textAmountEnemy: {fileID: 0}
+  _amountEnemy: 24
+--- !u!114 &3103566743096580966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8527508263421823573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa19f8dd87f231f4380a1f79cc4f363d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _warningReturn: {fileID: 0}
+  _warningExit: {fileID: 0}
+--- !u!114 &7007216857632070393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8527508263421823573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6440d2b08d902498099ec7afc6a9e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameObjectPresent: {fileID: 0}
+--- !u!114 &9002136125472782511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8527508263421823573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34866fbec43b8a94d85e60698c8eb02d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameObjectToy: {fileID: 0}
+--- !u!114 &8220526044187339840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8527508263421823573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7223a2f342e9de47907f5eba21760f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _destruction: {fileID: 6384718242133271961}
+  _healthBar: {fileID: 5930924038810923652}
+  _hit: {fileID: 2539952314744024576}
+  _health: 0
+--- !u!114 &6384718242133271961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8527508263421823573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acbcebf5e0a033143894f6cb0add3e92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hitEffect: {fileID: 448995755626997196, guid: d3e5323bc0d963f46ab1102241f99615,
+    type: 3}
+  _killEffect: {fileID: 6722502250348852914, guid: f0a90688489bd994080e463cf307b0ce,
+    type: 3}
+--- !u!114 &5930924038810923652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8527508263421823573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ca2f4f82ac1bb94ca42e678ef4d1a29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lifeBar: {fileID: 0}
+--- !u!114 &2539952314744024576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8527508263421823573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 003bdb80d91a43849bb25b770368af82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _soundHit: {fileID: 8300000, guid: 7c89584eea213d549bbf79b57ecd45b9, type: 3}
+  _audioSource: {fileID: 8527508264263733636}
 --- !u!82 &8527508264263733636
 AudioSource:
   m_ObjectHideFlags: 0

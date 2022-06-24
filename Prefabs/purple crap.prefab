@@ -99,8 +99,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _destruction: {fileID: -1073114413060914656}
-  _explosion: {fileID: 448995755626997196, guid: d3e5323bc0d963f46ab1102241f99615,
-    type: 3}
   _rigidbody2D: {fileID: 2190101452533932503}
   _time: 2
   _damage: 10
@@ -116,6 +114,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acbcebf5e0a033143894f6cb0add3e92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _hitEffect: {fileID: 448995755626997196, guid: d3e5323bc0d963f46ab1102241f99615,
+    type: 3}
+  _killEffect: {fileID: 6722502250348852914, guid: f0a90688489bd994080e463cf307b0ce,
+    type: 3}
 --- !u!61 &-2902596806281906513
 BoxCollider2D:
   m_ObjectHideFlags: 0
