@@ -60,7 +60,7 @@ public class Win : MonoBehaviour
     {
         PlayMusic();
         _present.GameObjectDisappears();
-        _toy.GameObjectDisappears();
+        _toy.GameObjectAppearance();
     }
 
     public void PressNo()

@@ -100,7 +100,6 @@ GameObject:
   - component: {fileID: -5682179782981507727}
   - component: {fileID: -3149090332673596550}
   - component: {fileID: -3269247656731572832}
-  - component: {fileID: -2264230164200011541}
   - component: {fileID: 1057121588067064787}
   - component: {fileID: 1057121588067064790}
   - component: {fileID: 1057121588067064789}
@@ -207,8 +206,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destruction: {fileID: -5682179782981507727}
   _healthBar: {fileID: -3149090332673596550}
-  _countScore: {fileID: -2264230164200011541}
-  _weapon: {fileID: -6409985023316296613}
   _hit: {fileID: -7614318521098332112}
   _health: 100
 --- !u!114 &-6409985023316296613
@@ -298,18 +295,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c4918f212b9811741b4bc353e211fce4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-2264230164200011541
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1057121588067064793}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b8dc99891ff9cf41b05026891a1bb90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!60 &1057121588067064787

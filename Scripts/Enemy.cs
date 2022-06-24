@@ -18,8 +18,8 @@ public class Enemy : MonoBehaviour
 
         if (_health <= 0)
         {
-            ScoreChanged?.Invoke();
             _destruction.KillEffect();
+            ScoreChanged?.Invoke();
         }
     }
 }

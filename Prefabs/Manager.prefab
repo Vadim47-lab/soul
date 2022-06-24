@@ -15,12 +15,8 @@ GameObject:
   - component: {fileID: 5421448353435374420}
   - component: {fileID: 8527508264263733637}
   - component: {fileID: 3103566743096580966}
-  - component: {fileID: 7007216857632070393}
   - component: {fileID: 9002136125472782511}
-  - component: {fileID: 8220526044187339840}
-  - component: {fileID: 6384718242133271961}
-  - component: {fileID: 5930924038810923652}
-  - component: {fileID: 2539952314744024576}
+  - component: {fileID: 5045203934798263520}
   - component: {fileID: 8527508264263733636}
   m_Layer: 0
   m_Name: Manager
@@ -56,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _warning: {fileID: 3103566743096580966}
-  _present: {fileID: 7007216857632070393}
+  _present: {fileID: 0}
   _press: {fileID: 7124620130830815553}
   _fon: {fileID: 5421448353435374420}
   _toy: {fileID: 9002136125472782511}
@@ -76,7 +72,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49a9d5696748dfe49a8849186d26211e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemy: {fileID: 0}
   _enemyDisplay: {fileID: 8527508264263733637}
   _scoreText: {fileID: 0}
 --- !u!114 &7124620130830815553
@@ -135,19 +130,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _warningReturn: {fileID: 0}
   _warningExit: {fileID: 0}
---- !u!114 &7007216857632070393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8527508263421823573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a6440d2b08d902498099ec7afc6a9e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _gameObjectPresent: {fileID: 0}
 --- !u!114 &9002136125472782511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,7 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameObjectToy: {fileID: 0}
---- !u!114 &8220526044187339840
+--- !u!114 &5045203934798263520
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -170,56 +152,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8527508263421823573}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7223a2f342e9de47907f5eba21760f7, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a6440d2b08d902498099ec7afc6a9e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _destruction: {fileID: 6384718242133271961}
-  _healthBar: {fileID: 5930924038810923652}
-  _hit: {fileID: 2539952314744024576}
-  _health: 0
---- !u!114 &6384718242133271961
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8527508263421823573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acbcebf5e0a033143894f6cb0add3e92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _hitEffect: {fileID: 448995755626997196, guid: d3e5323bc0d963f46ab1102241f99615,
-    type: 3}
-  _killEffect: {fileID: 6722502250348852914, guid: f0a90688489bd994080e463cf307b0ce,
-    type: 3}
---- !u!114 &5930924038810923652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8527508263421823573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ca2f4f82ac1bb94ca42e678ef4d1a29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _lifeBar: {fileID: 0}
---- !u!114 &2539952314744024576
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8527508263421823573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 003bdb80d91a43849bb25b770368af82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _soundHit: {fileID: 8300000, guid: 7c89584eea213d549bbf79b57ecd45b9, type: 3}
-  _audioSource: {fileID: 8527508264263733636}
+  _gameObjectPresent: {fileID: 0}
 --- !u!82 &8527508264263733636
 AudioSource:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -5,20 +6,26 @@ using UnityEngine.SceneManagement;
 
 public class Score : MonoBehaviour
 {
-    [SerializeField] private Enemy _enemy;
     [SerializeField] private EnemyDisplay _enemyDisplay;
     [SerializeField] private TMP_Text _scoreText;
+    [SerializeField] private Enemy[] _enemies;
 
     private int _score;
 
     private void OnEnable()
     {
-        _enemy.ScoreChanged += OnScoreChanged;
+        for (int i = 0; i < _enemies.Length; i++)
+        {
+            _enemies[i].ScoreChanged += OnScoreChanged;
+        }
     }
 
     private void OnDisable()
     {
-        _enemy.ScoreChanged -= OnScoreChanged;
+        for (int i = 0; i < _enemies.Length; i++)
+        {
+            _enemies[i].ScoreChanged -= OnScoreChanged;
+        }
     }
 
     private void Start()
@@ -33,15 +40,14 @@ public class Score : MonoBehaviour
 
     private void OnScoreChanged()
     {
-        Debug.Log("Вызов метода OnScoreChanged в классе Score");
         _score++;
         ShowScore();
-        DefeatedEnemy(_score);
+        DefeatedEnemy();
     }
 
-    private void DefeatedEnemy(int score)
+    private void DefeatedEnemy()
     {
-        if (score == _enemyDisplay.TransformCountEnemy && SceneManager.sceneCount == 1)
+        if (_score == _enemyDisplay.TransformCountEnemy && SceneManager.sceneCount == 1)
         {
             SceneManager.LoadScene(2);
         }
