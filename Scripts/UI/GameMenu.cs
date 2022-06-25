@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 public class GameMenu: MonoBehaviour
 {
     [SerializeField] private Warning _warning;
-    [SerializeField] private Press _press;
-    [SerializeField] private Fon _fon;
+    [SerializeField] private Music _press;
+    [SerializeField] private Music _background;
     [SerializeField] private Button _restartButton;
     [SerializeField] private Button _exitButton;
     [SerializeField] private Button _returnButton;
@@ -68,12 +68,12 @@ public class GameMenu: MonoBehaviour
     {
         if (_playSong == true)
         {
-            _press.PlayButtonPress();
+            _press.PlayMusic();
         }
 
         if (_playSong == false)
         {
-            _fon.PlayFonMusic();
+            _background.PlayMusic();
         }
     }
 }

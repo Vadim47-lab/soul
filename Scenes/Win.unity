@@ -338,7 +338,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &342517129 stripped
 MonoBehaviour:
@@ -1173,7 +1173,7 @@ PrefabInstance:
     - target: {fileID: 7562600703317701056, guid: 186d636964194d24cbb835d020acc31a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7562600703317701056, guid: 186d636964194d24cbb835d020acc31a,
         type: 3}
@@ -1327,6 +1327,36 @@ PrefabInstance:
       propertyPath: _scoreText
       value: 
       objectReference: {fileID: 342517129}
+    - target: {fileID: 261071426080905022, guid: 559cdcd2f1d53174c865ebe7da5cc273,
+        type: 3}
+      propertyPath: _press
+      value: 
+      objectReference: {fileID: 8527508264263733638}
+    - target: {fileID: 261071426080905022, guid: 559cdcd2f1d53174c865ebe7da5cc273,
+        type: 3}
+      propertyPath: _warning
+      value: 
+      objectReference: {fileID: 8527508264263733637}
+    - target: {fileID: 261071426080905022, guid: 559cdcd2f1d53174c865ebe7da5cc273,
+        type: 3}
+      propertyPath: _background
+      value: 
+      objectReference: {fileID: 8527508264263733635}
+    - target: {fileID: 261071426080905022, guid: 559cdcd2f1d53174c865ebe7da5cc273,
+        type: 3}
+      propertyPath: _exitButton
+      value: 
+      objectReference: {fileID: 820681268}
+    - target: {fileID: 261071426080905022, guid: 559cdcd2f1d53174c865ebe7da5cc273,
+        type: 3}
+      propertyPath: _returnButton
+      value: 
+      objectReference: {fileID: 771909928}
+    - target: {fileID: 261071426080905022, guid: 559cdcd2f1d53174c865ebe7da5cc273,
+        type: 3}
+      propertyPath: _restartButton
+      value: 
+      objectReference: {fileID: 422586099}
     - target: {fileID: 3103566743096580966, guid: 559cdcd2f1d53174c865ebe7da5cc273,
         type: 3}
       propertyPath: _warningExit
@@ -1350,7 +1380,7 @@ PrefabInstance:
     - target: {fileID: 8527508263421823578, guid: 559cdcd2f1d53174c865ebe7da5cc273,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8527508263421823578, guid: 559cdcd2f1d53174c865ebe7da5cc273,
         type: 3}
@@ -1404,29 +1434,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8527508263421823579, guid: 559cdcd2f1d53174c865ebe7da5cc273,
         type: 3}
-      propertyPath: _present
+      propertyPath: _press
       value: 
-      objectReference: {fileID: 8527508264263733635}
-    - target: {fileID: 8527508263421823579, guid: 559cdcd2f1d53174c865ebe7da5cc273,
-        type: 3}
-      propertyPath: _exitButton
-      value: 
-      objectReference: {fileID: 820681268}
+      objectReference: {fileID: 8527508264263733638}
     - target: {fileID: 8527508263421823579, guid: 559cdcd2f1d53174c865ebe7da5cc273,
         type: 3}
       propertyPath: _presentButton
       value: 
       objectReference: {fileID: 827520242}
-    - target: {fileID: 8527508263421823579, guid: 559cdcd2f1d53174c865ebe7da5cc273,
-        type: 3}
-      propertyPath: _restartButton
-      value: 
-      objectReference: {fileID: 422586099}
-    - target: {fileID: 8527508263421823579, guid: 559cdcd2f1d53174c865ebe7da5cc273,
-        type: 3}
-      propertyPath: _mainMenuButton
-      value: 
-      objectReference: {fileID: 771909928}
     - target: {fileID: 8527508264263733637, guid: 559cdcd2f1d53174c865ebe7da5cc273,
         type: 3}
       propertyPath: _textAmountEnemy
@@ -1441,14 +1456,14 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 559cdcd2f1d53174c865ebe7da5cc273, type: 3}
 --- !u!114 &8527508264263733635 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5045203934798263520, guid: 559cdcd2f1d53174c865ebe7da5cc273,
+  m_CorrespondingSourceObject: {fileID: 5863031229343309451, guid: 559cdcd2f1d53174c865ebe7da5cc273,
     type: 3}
   m_PrefabInstance: {fileID: 8527508264263733634}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 453217122}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a6440d2b08d902498099ec7afc6a9e7, type: 3}
+  m_Script: {fileID: 11500000, guid: 2ccb7b491567ca940a725a5b10fd414e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &8527508264263733636 stripped
@@ -1461,5 +1476,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 44aa41c30fc0fa945a08d8bd99cd1633, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8527508264263733637 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3103566743096580966, guid: 559cdcd2f1d53174c865ebe7da5cc273,
+    type: 3}
+  m_PrefabInstance: {fileID: 8527508264263733634}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453217122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa19f8dd87f231f4380a1f79cc4f363d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8527508264263733638 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5034444730257129354, guid: 559cdcd2f1d53174c865ebe7da5cc273,
+    type: 3}
+  m_PrefabInstance: {fileID: 8527508264263733634}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453217122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ccb7b491567ca940a725a5b10fd414e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

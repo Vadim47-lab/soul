@@ -6,7 +6,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private GameObject _spawnEffect;
     [SerializeField] private Bullet _bullet;
     [SerializeField] private Cartridge _cartridge;
-    [SerializeField] private Shoot _shoot;
+    [SerializeField] private Music _shoot;
     [SerializeField] private float _timeToShoot;
     [SerializeField] private float _speed;
 
@@ -23,7 +23,7 @@ public class Weapon : MonoBehaviour
         if (Input.GetMouseButton(0) && _time <= 0)
         {
             GenerateBullet();
-            _shoot.PlayShoot();
+            _shoot.PlayMusic();
 
             _time = _timeToShoot;
         }

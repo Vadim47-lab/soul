@@ -40,10 +40,10 @@ public class Score : MonoBehaviour
     {
         _score++;
         ShowScore();
-        DefeatedEnemy();
+        DefeatEnemy();
     }
 
-    private void DefeatedEnemy()
+    private void DefeatEnemy()
     {
         if (_score == _enemyDisplay.TransformCountEnemy && SceneManager.sceneCount == 1)
         {

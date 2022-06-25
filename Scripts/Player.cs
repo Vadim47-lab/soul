@@ -5,7 +5,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private HealthBar _healthBar;
     [SerializeField] private Weapon _weapon;
-    [SerializeField] private Hit _hit;
+    [SerializeField] private Music _hit;
     [SerializeField] private int _health;
 
     private void Update()
@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        _hit.PlayHit();
+        _hit.PlayMusic();
         _health -= damage;
         _healthBar.ChangedHealthBar(_health);
 

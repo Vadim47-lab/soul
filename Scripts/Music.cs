@@ -1,9 +1,9 @@
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
-public class Fon : MonoBehaviour
+public class Music : MonoBehaviour
 {
-    [SerializeField] private AudioClip _fonMusic;
+    [SerializeField] private AudioClip _playback;
     [SerializeField] private AudioSource _audioSource;
 
     private void Start()
@@ -11,8 +11,8 @@ public class Fon : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
     }
 
-    public void PlayFonMusic()
+    public void PlayMusic()
     {
-        _audioSource.PlayOneShot(_fonMusic);
+        _audioSource.PlayOneShot(_playback);
     }
 }

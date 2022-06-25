@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    [SerializeField] private Press _press;
+    [SerializeField] private Music _press;
     [SerializeField] private Warning _warning;
     [SerializeField] private GameObject _menu;
 
@@ -22,44 +22,44 @@ public class Menu : MonoBehaviour
 
     public void OpenMenu()
     {
-        _press.PlayButtonPress();
+        _press.PlayMusic();
         Time.timeScale = 0;
         _menu.SetActive(true);
     }
 
     public void CloseMenu()
     {
-        _press.PlayButtonPress();
+        _press.PlayMusic();
         _menu.SetActive(false);
         Time.timeScale = 1;
     }
     public void ReturnMenu()
     {
-        _press.PlayButtonPress();
+        _press.PlayMusic();
         _warning.WarningReturnBecomeTrue();
     }
 
     public void PressYesReturnMenu()
     {
-        _press.PlayButtonPress();
+        _press.PlayMusic();
         SceneManager.LoadScene(0);
     }
 
     public void PressYesExit()
     {
-        _press.PlayButtonPress();
+        _press.PlayMusic();
         Application.Quit();
     }
 
     public void PressNo()
     {
-        _press.PlayButtonPress();
+        _press.PlayMusic();
         _warning.WarningBecomeFalse();
     }
 
     public void Exit()
     {
-        _press.PlayButtonPress();
+        _press.PlayMusic();
         _warning.WarningExitBecomeTrue();
     }
 }
