@@ -179,9 +179,9 @@ GameObject:
   - component: {fileID: 4660527176548484877}
   - component: {fileID: 8617620149916690939}
   - component: {fileID: 2375878228200032989}
-  - component: {fileID: 4400580116901634554}
   - component: {fileID: 5274083051541273046}
   - component: {fileID: 8461115289603144355}
+  - component: {fileID: 4400580116901634554}
   - component: {fileID: 6395299105281884862}
   - component: {fileID: 4660527176548484875}
   - component: {fileID: 4151890521259201459}
@@ -288,6 +288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weapon: {fileID: 8617620149916690939}
+  _healthObject: {fileID: 4400580116901634554}
   _hit: {fileID: 8461115289603144355}
   _health: 100
 --- !u!114 &8617620149916690939
@@ -324,21 +325,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lifeBar: {fileID: 6199799159420342259}
   _health: {fileID: 4400580116901634554}
---- !u!114 &4400580116901634554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4660527176548484879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 331af7266eb3cf2449a022b77439133f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _healthBar: {fileID: 2375878228200032989}
-  _player: {fileID: 4660527176548484877}
-  _enemy: {fileID: 1057121588067064788, guid: 6d3d4430d2e73da4f80e7a216d7e198a, type: 3}
 --- !u!114 &5274083051541273046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -369,6 +355,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playback: {fileID: 8300000, guid: 7c89584eea213d549bbf79b57ecd45b9, type: 3}
   _audioSource: {fileID: 868769481}
+--- !u!114 &4400580116901634554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4660527176548484879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 331af7266eb3cf2449a022b77439133f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthBar: {fileID: 2375878228200032989}
 --- !u!114 &6395299105281884862
 MonoBehaviour:
   m_ObjectHideFlags: 0

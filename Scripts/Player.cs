@@ -5,12 +5,9 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     [SerializeField] private Weapon _weapon;
+    [SerializeField] private Health _healthObject;
     [SerializeField] private Music _hit;
     [SerializeField] private int _health;
-
-    public event UnityAction<int> HealthChanged;
-
-    public int Health { get; private set; }
 
     private void Update()
     {
@@ -43,7 +40,7 @@ public class Player : MonoBehaviour
     {
         _hit.PlayMusic();
         _health -= damage;
-        Health = _health;
+        _healthObject.OnHealhChanged(_health);
 
         if (_health <= 0)
         {

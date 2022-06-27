@@ -6308,6 +6308,11 @@ PrefabInstance:
       propertyPath: _hit
       value: 
       objectReference: {fileID: 4660527177416202697}
+    - target: {fileID: 4660527176548484877, guid: d6210e65d03e7ca41a2e42a0f86ee18c,
+        type: 3}
+      propertyPath: _healthObject
+      value: 
+      objectReference: {fileID: 4660527177416202699}
     - target: {fileID: 4660527176548484879, guid: d6210e65d03e7ca41a2e42a0f86ee18c,
         type: 3}
       propertyPath: m_Name
@@ -6356,6 +6361,18 @@ AudioSource:
     type: 3}
   m_PrefabInstance: {fileID: 4660527177416202695}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4660527177416202699 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4400580116901634554, guid: d6210e65d03e7ca41a2e42a0f86ee18c,
+    type: 3}
+  m_PrefabInstance: {fileID: 4660527177416202695}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868769480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 331af7266eb3cf2449a022b77439133f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4728470436039517092 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6251493471713723538, guid: dc3dcbf58517361469436c216653bbfa,
