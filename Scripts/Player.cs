@@ -43,7 +43,6 @@ public class Player : MonoBehaviour
     {
         _hit.PlayMusic();
         _health -= damage;
-        HealthChanged?.Invoke(_health);
 
         if (_health <= 0)
         {
