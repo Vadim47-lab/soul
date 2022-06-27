@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
     {
         _hit.PlayMusic();
         _health -= damage;
+        Health = _health;
 
         if (_health <= 0)
         {

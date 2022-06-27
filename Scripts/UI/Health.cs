@@ -13,17 +13,17 @@ public class Health : MonoBehaviour
 
     public void HealhChanged(int damage)
     {
-        _changedHealth = _enemy.Health;
         _player.TakeDamage(damage);
-        OnHealhChanged();
+        _changedHealth = _enemy.Health;
+        OnHealhChanged(_changedHealth);
 
-        _changedHealth = _player.Health;
         _enemy.TakeDamage(damage);
-        OnHealhChanged();
+        _changedHealth = _player.Health;
+        OnHealhChanged(_changedHealth);
     }
 
-    public void OnHealhChanged()
+    public void OnHealhChanged(int changedHealth)
     {
-        HealthBarChanged?.Invoke(_changedHealth);
+        HealthBarChanged?.Invoke(changedHealth);
     }
 }
