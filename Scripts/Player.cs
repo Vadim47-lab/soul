@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(Health))]
 public class Player : MonoBehaviour
 {
     [SerializeField] private Weapon _weapon;
-    [SerializeField] private Health _healthObject;
+    [SerializeField] private Health _health;
     [SerializeField] private Music _hit;
 
     private void Update()
@@ -36,6 +38,11 @@ public class Player : MonoBehaviour
     public void TakeDamage(int damage)
     {
         _hit.PlayMusic();
-        _healthObject.PlayerHealthChanged(damage);
+        _health.OnHealhChanged(damage);
+
+        if (_health.Value <= 0)
+        {
+            SceneManager.LoadScene(4);
+        }
     }
 }

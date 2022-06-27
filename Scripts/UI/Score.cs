@@ -6,18 +6,18 @@ public class Score : MonoBehaviour
 {
     [SerializeField] private EnemyDisplay _enemyDisplay;
     [SerializeField] private TMP_Text _scoreText;
-    [SerializeField] private Health _health;
+    [SerializeField] private Enemy _enemy;
 
     private int _score;
 
     private void OnEnable()
     {
-        _health.ScoreChanged += OnScoreChanged;
+        _enemy.ScoreChanged += OnScoreChanged;
     }
 
     private void OnDisable()
     {
-        _health.ScoreChanged -= OnScoreChanged;
+        _enemy.ScoreChanged -= OnScoreChanged;
     }
 
     private void Start()
