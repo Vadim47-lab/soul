@@ -12,8 +12,8 @@ public class Health : MonoBehaviour
 
     public void OnHealhChanged(int damage)
     {
-        Value = _health;
         _health -= damage;
+        Value = _health;
         HealthBarChanged?.Invoke(_health);
     }
 }
