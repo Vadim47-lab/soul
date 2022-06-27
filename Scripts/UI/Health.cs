@@ -11,7 +11,7 @@ public class Health : MonoBehaviour
     public event UnityAction<int> HealthBarChanged;
     public event UnityAction ScoreChanged;
 
-    public void OnHealhChanged(int damage)
+    private void OnHealhChanged(int damage)
     {
         _health -= damage;
         HealthBarChanged?.Invoke(_health);
