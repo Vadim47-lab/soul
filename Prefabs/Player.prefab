@@ -290,7 +290,6 @@ MonoBehaviour:
   _weapon: {fileID: 8617620149916690939}
   _healthObject: {fileID: 4400580116901634554}
   _hit: {fileID: 8461115289603144355}
-  _health: 100
 --- !u!114 &8617620149916690939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,7 +366,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 331af7266eb3cf2449a022b77439133f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _destruction: {fileID: 5274083051541273046}
   _healthBar: {fileID: 2375878228200032989}
+  _health: 0
 --- !u!114 &6395299105281884862
 MonoBehaviour:
   m_ObjectHideFlags: 0
