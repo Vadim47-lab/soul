@@ -6,18 +6,24 @@ public class Score : MonoBehaviour
 {
     [SerializeField] private EnemyDisplay _enemyDisplay;
     [SerializeField] private TMP_Text _scoreText;
-    [SerializeField] private Enemy _enemy;
+    [SerializeField] private Enemy[] _enemies;
 
     private int _score;
 
     private void OnEnable()
     {
-        _enemy.ScoreChanged += OnScoreChanged;
+        for (int i = 0; i < _enemies.Length; i++)
+        {
+            _enemies[i].ScoreChanged += OnScoreChanged;
+        }
     }
 
     private void OnDisable()
     {
-        _enemy.ScoreChanged -= OnScoreChanged;
+        for (int i = 0; i < _enemies.Length; i++)
+        {
+            _enemies[i].ScoreChanged -= OnScoreChanged;
+        }
     }
 
     private void Start()
