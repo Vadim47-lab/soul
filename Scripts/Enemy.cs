@@ -8,13 +8,13 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int _health;
 
     public event UnityAction ScoreChanged;
-    public event UnityAction<int> HealthChanged;
+
+    public int Health { get; private set; }
 
     public void TakeDamage(int damage)
     {
         _hit.PlayMusic();
         _health -= damage;
-        HealthChanged?.Invoke(_health);
 
         if (_health <= 0)
         {

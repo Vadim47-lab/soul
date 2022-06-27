@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
 
     public event UnityAction<int> HealthChanged;
 
+    public int Health { get; private set; }
+
     private void Update()
     {
         Vector3 mousePos = Input.mousePosition;

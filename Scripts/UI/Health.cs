@@ -1,31 +1,29 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private Transform _lifeBar;
     [SerializeField] private HealthBar _healthBar;
+    [SerializeField] private Player _player;
+    [SerializeField] private Enemy _enemy;
 
-    private float _oldLifeBar;
-    private readonly float _axisX = 1.75f;
+    public event UnityAction<int> HealthBarChanged;
 
-    private void OnEnable()
+    int _changedHealth;
+
+    public void HealhChanged(int damage)
     {
-        _healthBar.HealthBarChanged += OnHealhChanged;
+        _changedHealth = _enemy.Health;
+        _player.TakeDamage(damage);
+        OnHealhChanged();
+
+        _changedHealth = _player.Health;
+        _enemy.TakeDamage(damage);
+        OnHealhChanged();
     }
 
-    private void OnDisable()
+    public void OnHealhChanged()
     {
-        _healthBar.HealthBarChanged -= OnHealhChanged;
-    }
-
-    private void Start()
-    {
-        _oldLifeBar = _lifeBar.localScale.x;
-    }
-
-    public void OnHealhChanged(int health)
-    {
-        _lifeBar.localPosition = new Vector2(_axisX * health / 100 - _axisX, _lifeBar.localPosition.y);
-        _lifeBar.localScale = new Vector2(_oldLifeBar * health / 100, _lifeBar.localScale.y);
+        HealthBarChanged?.Invoke(_changedHealth);
     }
 }

@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 1057121588067064788}
   - component: {fileID: -6409985023316296613}
   - component: {fileID: -3149090332673596550}
+  - component: {fileID: 2509062048536675086}
   - component: {fileID: 7900627775853241157}
   - component: {fileID: -5682179782981507727}
   - component: {fileID: -3269247656731572832}
@@ -239,6 +240,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lifeBar: {fileID: 7838250924766510113}
+  _health: {fileID: 2509062048536675086}
+--- !u!114 &2509062048536675086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057121588067064793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 331af7266eb3cf2449a022b77439133f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthBar: {fileID: -3149090332673596550}
   _player: {fileID: 4660527176548484877, guid: d6210e65d03e7ca41a2e42a0f86ee18c, type: 3}
   _enemy: {fileID: 1057121588067064788}
 --- !u!114 &7900627775853241157
