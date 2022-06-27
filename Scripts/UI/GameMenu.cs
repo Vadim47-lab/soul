@@ -43,7 +43,7 @@ public class GameMenu: MonoBehaviour
     private void OnExitButtonClick()
     {
         PlayMusic();
-        _warning.ExitBecomeTrue();
+        _warning.ExitAppear();
     }
 
     private void OnReturnMenuButtonClick()
@@ -55,7 +55,7 @@ public class GameMenu: MonoBehaviour
     public void PressNo()
     {
         PlayMusic();
-        _warning.BecomeFalse();
+        _warning.Disappear();
     }
 
     public void PressYesExit()

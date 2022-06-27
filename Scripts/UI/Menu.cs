@@ -36,7 +36,7 @@ public class Menu : MonoBehaviour
     public void ReturnMenu()
     {
         _press.PlayMusic();
-        _warning.ReturnBecomeTrue();
+        _warning.ReturnAppear();
     }
 
     public void PressYesReturnMenu()
@@ -54,12 +54,12 @@ public class Menu : MonoBehaviour
     public void PressNo()
     {
         _press.PlayMusic();
-        _warning.BecomeFalse();
+        _warning.Disappear();
     }
 
     public void Exit()
     {
         _press.PlayMusic();
-        _warning.ExitBecomeTrue();
+        _warning.ExitAppear();
     }
 }
