@@ -7,11 +7,11 @@ public class EnemyDisplay : MonoBehaviour
     [SerializeField] private TMP_Text _textAmountEnemy;
     [SerializeField] private int _amountEnemy;
 
-    public int TransformCountEnemy { get; private set; }
+    public int EnemiesCount { get; private set; }
 
     private void Start()
     {
-        TransformCountEnemy = _amountEnemy;
+        EnemiesCount = _amountEnemy;
 
         ShowAmountEnemy();
     }

@@ -5,17 +5,17 @@ public class Warning : MonoBehaviour
     [SerializeField] private GameObject _warningReturn;
     [SerializeField] private GameObject _warningExit;
 
-    public void WarningReturnBecomeTrue()
+    public void ReturnBecomeTrue()
     {
         _warningReturn.SetActive(true);
     }
 
-    public void WarningExitBecomeTrue()
+    public void ExitBecomeTrue()
     {
         _warningExit.SetActive(true);
     }
 
-    public void WarningBecomeFalse()
+    public void BecomeFalse()
     {
         _warningReturn.SetActive(false);
         _warningExit.SetActive(false);

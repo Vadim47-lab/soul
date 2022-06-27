@@ -4,7 +4,7 @@ public class Present : MonoBehaviour
 {
     [SerializeField] private GameObject _gameObjectPresent;
 
-    public void GameObjectDisappears()
+    public void Disappear()
     {
         _gameObjectPresent.SetActive(false);
     }

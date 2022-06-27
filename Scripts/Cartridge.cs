@@ -12,6 +12,6 @@ public class Cartridge : MonoBehaviour
         Bullet bulletClone = Instantiate(bullet,
             bulletPosition,
             transform.rotation);
-        bulletClone.GetNewComponent.velocity = bulletForce * speed;
+        bulletClone.Rigidbody2D.velocity = bulletForce * speed;
     }
 }

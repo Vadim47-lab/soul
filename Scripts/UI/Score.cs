@@ -45,7 +45,15 @@ public class Score : MonoBehaviour
 
     private void DefeatEnemy()
     {
-        if (_score == _enemyDisplay.TransformCountEnemy && SceneManager.sceneCount == 1)
+        if (_score == _enemyDisplay.EnemiesCount)
+        {
+            TransitionScene();
+        }
+    }
+
+    private void TransitionScene()
+    {
+        if (SceneManager.sceneCount == 1)
         {
             SceneManager.LoadScene(2);
         }

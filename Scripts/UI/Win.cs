@@ -21,7 +21,7 @@ public class Win : MonoBehaviour
     private void OnPresentButtonClick()
     {
         _press.PlayMusic();
-        _present.GameObjectDisappears();
-        _toy.GameObjectAppearance();
+        _present.Disappear();
+        _toy.Appear();
     }
 }

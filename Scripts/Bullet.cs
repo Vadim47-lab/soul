@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float _time;
     [SerializeField] private int _damage;
 
-    public Rigidbody2D GetNewComponent => _rigidbody2D;
+    public Rigidbody2D Rigidbody2D => _rigidbody2D;
 
     private void Start()
     {
