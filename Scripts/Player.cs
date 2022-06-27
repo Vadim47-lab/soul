@@ -1,13 +1,10 @@
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] private Weapon _weapon;
     [SerializeField] private Health _healthObject;
     [SerializeField] private Music _hit;
-    [SerializeField] private int _health;
 
     private void Update()
     {
@@ -39,12 +36,6 @@ public class Player : MonoBehaviour
     public void TakeDamage(int damage)
     {
         _hit.PlayMusic();
-        _health -= damage;
-        _healthObject.OnHealhChanged(_health);
-
-        if (_health <= 0)
-        {
-            SceneManager.LoadScene(4);
-        }
+        _healthObject.PlayerHealthChanged(damage);
     }
 }
