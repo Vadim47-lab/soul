@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 2190101452533932504}
   - component: {fileID: 2190101452533932505}
   - component: {fileID: -8608078605058399480}
-  - component: {fileID: 1847644534901566505}
-  - component: {fileID: 1988753643460730428}
   - component: {fileID: -1073114413060914656}
   - component: {fileID: -2902596806281906513}
   - component: {fileID: 2190101452533932503}
@@ -102,41 +100,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _destruction: {fileID: -1073114413060914656}
-  _health: {fileID: 4400580116901634554, guid: d6210e65d03e7ca41a2e42a0f86ee18c, type: 3}
   _rigidbody2D: {fileID: 2190101452533932503}
   _time: 2
   _damage: 10
---- !u!114 &1847644534901566505
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2190101452533932506}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 331af7266eb3cf2449a022b77439133f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _healthBar: {fileID: 2375878228200032989, guid: d6210e65d03e7ca41a2e42a0f86ee18c,
-    type: 3}
-  _player: {fileID: 4660527176548484877, guid: d6210e65d03e7ca41a2e42a0f86ee18c, type: 3}
-  _enemy: {fileID: 1057121588067064788, guid: 6d3d4430d2e73da4f80e7a216d7e198a, type: 3}
---- !u!114 &1988753643460730428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2190101452533932506}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ca2f4f82ac1bb94ca42e678ef4d1a29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _lifeBar: {fileID: 4660527176548484876, guid: d6210e65d03e7ca41a2e42a0f86ee18c,
-    type: 3}
-  _health: {fileID: 4400580116901634554, guid: d6210e65d03e7ca41a2e42a0f86ee18c, type: 3}
 --- !u!114 &-1073114413060914656
 MonoBehaviour:
   m_ObjectHideFlags: 0
