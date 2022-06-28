@@ -5,7 +5,7 @@ public class Warning : MonoBehaviour
     [SerializeField] private GameObject _warningReturn;
     [SerializeField] private GameObject _warningExit;
 
-    public void ReturnAppear()
+    public void ReturnMainAppear()
     {
         _warningReturn.SetActive(true);
     }

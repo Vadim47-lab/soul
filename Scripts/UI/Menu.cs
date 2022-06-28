@@ -36,7 +36,7 @@ public class Menu : MonoBehaviour
     public void ReturnMenu()
     {
         _press.PlayMusic();
-        _warning.ReturnAppear();
+        _warning.ReturnMainAppear();
     }
 
     public void PressYesReturnMenu()

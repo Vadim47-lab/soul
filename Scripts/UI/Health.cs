@@ -3,10 +3,9 @@ using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private HealthBar _healthBar;
     [SerializeField] private int _health;
 
-    public event UnityAction<int> HealthBarChanged;
+    public event UnityAction<int> HealthChanged;
 
     public int Value { get; private set; }
 
@@ -14,6 +13,6 @@ public class Health : MonoBehaviour
     {
         _health -= damage;
         Value = _health;
-        HealthBarChanged?.Invoke(_health);
+        HealthChanged?.Invoke(_health);
     }
 }
