@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private Destruction _destruction;
+    [SerializeField] private DestructionObject _destruction;
     [SerializeField] private Rigidbody2D _rigidbody2D;
     [SerializeField] private float _time;
     [SerializeField] private int _damage;
@@ -21,13 +21,13 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.TryGetComponent(out Enemy enemy))
         {
             enemy.TakeDamage(_damage);
-            _destruction.HitEffect();
         }
 
         else if (collision.gameObject.TryGetComponent(out Player player))
         {
             player.TakeDamage(_damage);
-            _destruction.HitEffect();
         }
+
+        _destruction.HitEffect();
     }
 }

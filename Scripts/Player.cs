@@ -1,12 +1,15 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-[RequireComponent(typeof(Health))]
+[RequireComponent(typeof(HealthBar))]
 public class Player : MonoBehaviour
 {
     [SerializeField] private Weapon _weapon;
-    [SerializeField] private Health _health;
     [SerializeField] private Music _hit;
+    [SerializeField] private int _health;
+
+    public event UnityAction<int> HealthChanged;
 
     private void Update()
     {
@@ -38,9 +41,10 @@ public class Player : MonoBehaviour
     public void TakeDamage(int damage)
     {
         _hit.PlayMusic();
-        _health.OnHealhChanged(damage);
+        _health -= damage;
+        HealthChanged?.Invoke(_health);
 
-        if (_health.Value <= 0)
+        if (_health <= 0)
         {
             SceneManager.LoadScene(4);
         }

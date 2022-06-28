@@ -3,19 +3,22 @@ using UnityEngine;
 public class HealthBar : MonoBehaviour
 {
     [SerializeField] private Transform _lifeBar;
-    [SerializeField] private Health _health;
+    [SerializeField] private Player _player;
+    [SerializeField] private Enemy _enemy;
 
     private float _oldLifeBar;
     private readonly float _axisX = 1.75f;
 
     private void OnEnable()
     {
-        _health.HealthChanged += OnHealhBarChanged;
+        _player.HealthChanged += OnHealhBarChanged;
+        _enemy.HealthChanged += OnHealhBarChanged;
     }
 
     private void OnDisable()
     {
-        _health.HealthChanged -= OnHealhBarChanged;
+        _player.HealthChanged -= OnHealhBarChanged;
+        _enemy.HealthChanged -= OnHealhBarChanged;
     }
 
     private void Start()

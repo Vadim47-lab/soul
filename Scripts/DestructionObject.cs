@@ -1,6 +1,7 @@
 using UnityEngine;
+using static UnityEngine.ParticleSystem;
 
-public class Destruction : MonoBehaviour
+public class DestructionObject : MonoBehaviour
 {
     [SerializeField] private GameObject _hitEffect;
     [SerializeField] private GameObject _killEffect;
