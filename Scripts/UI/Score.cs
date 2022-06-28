@@ -47,11 +47,11 @@ public class Score : MonoBehaviour
     {
         if (_score == _enemyDisplay.EnemiesCount)
         {
-            TransitionScene();
+            TransitScene();
         }
     }
 
-    private void TransitionScene()
+    private void TransitScene()
     {
         if (SceneManager.sceneCount == 1)
         {

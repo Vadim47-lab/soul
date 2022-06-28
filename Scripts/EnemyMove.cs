@@ -1,10 +1,12 @@
 using UnityEngine;
 
+[RequireComponent(typeof(ObjectMove))]
 [RequireComponent(typeof(Rigidbody2D))]
 public class EnemyMove : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D _rigidbody2D;
-    [SerializeField] private int _speed;
+    [SerializeField] private ObjectMove _objectMove;
+    [SerializeField] private float _speed;
 
     private void Start()
     {
@@ -14,9 +16,9 @@ public class EnemyMove : MonoBehaviour
 
     public void Move()
     {
-        var x = Random.Range(-_speed, _speed);
-        var y = Random.Range(-_speed, _speed);
+        float x = Random.Range(-_speed, _speed);
+        float y = Random.Range(-_speed, _speed);
 
-        _rigidbody2D.AddForce(new Vector2(x, y) * _speed, ForceMode2D.Force);
+        _objectMove.Move(_rigidbody2D, _speed, x, y);
     }
 }

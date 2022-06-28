@@ -1,8 +1,10 @@
 using UnityEngine;
 
+[RequireComponent(typeof(ObjectMove))]
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMove : MonoBehaviour
 {
+    [SerializeField] private ObjectMove _objectMove;
     [SerializeField] private float _speed;
 
     private Rigidbody2D _rigidbody2D;
@@ -16,6 +18,7 @@ public class PlayerMove : MonoBehaviour
     {
         float moveX = Input.GetAxis("Horizontal");
         float moveY = Input.GetAxis("Vertical");
-        _rigidbody2D.AddForce(new Vector2(moveX * _speed, moveY * _speed), ForceMode2D.Force);
+
+        _objectMove.Move(_rigidbody2D, _speed, moveX, moveY);
     }
 }
