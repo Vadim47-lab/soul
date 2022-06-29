@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
         _health -= damage;
         HealthChanged?.Invoke(_health);
 
-        if (_health == 0)
+        if (_health <= 0)
         {
             _destruction.KillEffect();
             ScoreChanged?.Invoke();
