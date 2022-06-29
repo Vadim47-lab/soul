@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(HealthBar))]
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IDamageable
 {
     [SerializeField] private DestructionObject _destruction;
     [SerializeField] private Music _hit;
@@ -15,6 +15,11 @@ public class Enemy : MonoBehaviour
     {
         _hit.PlayMusic();
         _health -= damage;
+        TakeDamage();
+    }
+
+    public void TakeDamage()
+    {
         HealthChanged?.Invoke(_health);
 
         if (_health <= 0)
