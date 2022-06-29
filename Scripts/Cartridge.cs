@@ -1,7 +1,10 @@
 using UnityEngine;
 
+[RequireComponent(typeof(BulletMove))]
 public class Cartridge : MonoBehaviour
 {
+    [SerializeField] private BulletMove _bulletMove;
+
     public void GenerateBullet(GameObject effect, GameObject spawn, Bullet bullet, float speed)
     {
         GameObject eff = Instantiate(effect, spawn.transform.position, transform.rotation);
@@ -12,6 +15,6 @@ public class Cartridge : MonoBehaviour
         Bullet bulletClone = Instantiate(bullet,
             bulletPosition,
             transform.rotation);
-        bulletClone.Rigidbody2D.velocity = bulletForce * speed;
+        _bulletMove.Move(bulletClone, bulletForce, speed);
     }
 }

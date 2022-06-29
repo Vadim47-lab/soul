@@ -23,7 +23,7 @@ public class Bullet : MonoBehaviour
             enemy.TakeDamage(_damage);
         }
 
-        else if (collision.gameObject.TryGetComponent(out Player player))
+        if (collision.gameObject.TryGetComponent(out Player player))
         {
             player.TakeDamage(_damage);
         }

@@ -8,18 +8,17 @@ public class DestructionObject : MonoBehaviour
 
     public void HitEffect()
     {
-        Instantiate(_hitEffect, transform.position, transform.rotation);
-        DestroyGameObject();
+        DestroyGameObject(_hitEffect);
     }
 
     public void KillEffect()
     {
-        Instantiate(_killEffect, transform.position, transform.rotation);
-        DestroyGameObject();
+        DestroyGameObject(_killEffect);
     }
 
-    private void DestroyGameObject()
+    private void DestroyGameObject(GameObject effect)
     {
+        Instantiate(effect, transform.position, transform.rotation);
         Destroy(gameObject);
     }
 }

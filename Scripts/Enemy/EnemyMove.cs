@@ -8,14 +8,12 @@ public class EnemyMove : MonoBehaviour
     [SerializeField] private ObjectMove _objectMove;
     [SerializeField] private float _speed;
 
-    private float _time;
-    private float _repeatRate;
+    private readonly float _time = 1;
+    private readonly float _repeatRate = 1;
 
     private void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
-        _time = 1;
-        _repeatRate = 1;
         InvokeRepeating(nameof(Move), _time, _repeatRate);
     }
 
