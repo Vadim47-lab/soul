@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
         _health -= damage;
         HealthChanged?.Invoke(_health);
 
-        if (_health == 0)
+        if (_health <= 0)
         {
             SceneManager.LoadScene(4);
         }
