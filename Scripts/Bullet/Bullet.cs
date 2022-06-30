@@ -28,10 +28,10 @@ public class Bullet : MonoBehaviour, IDamageable
             player.TakeDamage(_damage);
         }
 
-        TakeDamage();
+        TakeDamage(_damage);
     }
 
-    public void TakeDamage()
+    public void TakeDamage(int damage)
     {
         _destruction.HitEffect();
     }

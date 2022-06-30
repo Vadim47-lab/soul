@@ -15,11 +15,6 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         _hit.PlayMusic();
         _health -= damage;
-        TakeDamage();
-    }
-
-    public void TakeDamage()
-    {
         HealthChanged?.Invoke(_health);
 
         if (_health <= 0)
