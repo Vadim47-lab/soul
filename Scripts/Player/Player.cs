@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Health))]
@@ -37,7 +36,7 @@ public class Player : MonoBehaviour, IDamageable
 
     public void TakeDamage(int damage)
     {
-        _health.TakeDamage(damage);
+        _health.OnTakeDamage(damage);
 
         if (_health.Value <= 0)
         {

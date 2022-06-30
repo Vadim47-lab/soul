@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class Bullet : MonoBehaviour, IDamageable
+public class Bullet : MonoBehaviour
 {
     [SerializeField] private DestructionObject _destruction;
     [SerializeField] private Rigidbody2D _rigidbody2D;
@@ -18,21 +18,10 @@ public class Bullet : MonoBehaviour, IDamageable
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.TryGetComponent(out Enemy enemy))
+        if (collision.gameObject.TryGetComponent(out IDamageable damageable))
         {
-            enemy.TakeDamage(_damage);
+            damageable.TakeDamage(_damage);
+            _destruction.HitEffect();
         }
-
-        if (collision.gameObject.TryGetComponent(out Player player))
-        {
-            player.TakeDamage(_damage);
-        }
-
-        TakeDamage(_damage);
-    }
-
-    public void TakeDamage(int damage)
-    {
-        _destruction.HitEffect();
     }
 }

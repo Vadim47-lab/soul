@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(HealthBar))]
-public class Health : MonoBehaviour, IDamageable
+public class Health : MonoBehaviour
 {
     [SerializeField] private Music _hit;
     [SerializeField] private int _minHealth;
@@ -11,13 +11,13 @@ public class Health : MonoBehaviour, IDamageable
     public event UnityAction<int> HealthChanged;
 
     public int Value { get; private set; }
-
+    
     private void Start()
     {
         Value = _maxHealth;
     }
 
-    public void TakeDamage(int damage)
+    public void OnTakeDamage(int damage)
     {
         _hit.PlayMusic();
         Value -= damage;
