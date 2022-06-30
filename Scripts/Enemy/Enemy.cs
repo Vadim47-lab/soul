@@ -1,23 +1,20 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(HealthBar))]
+[RequireComponent(typeof(Health))]
 public class Enemy : MonoBehaviour, IDamageable
 {
     [SerializeField] private DestructionObject _destruction;
-    [SerializeField] private Music _hit;
-    [SerializeField] private int _health;
+    [SerializeField] private Health _health;
 
     public event UnityAction<int> HealthChanged;
     public event UnityAction ScoreChanged;
 
     public void TakeDamage(int damage)
     {
-        _hit.PlayMusic();
-        _health -= damage;
-        HealthChanged?.Invoke(_health);
+        _health.TakeDamage(damage);
 
-        if (_health <= 0)
+        if (_health.Value <= 0)
         {
             _destruction.KillEffect();
             ScoreChanged?.Invoke();

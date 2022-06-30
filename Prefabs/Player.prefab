@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 4660527176548484873}
   - component: {fileID: 4660527176548484877}
   - component: {fileID: 8617620149916690939}
+  - component: {fileID: 8714324414825068582}
   - component: {fileID: 5287708013647353034}
   - component: {fileID: 8461115289603144355}
   - component: {fileID: 6395299105281884862}
@@ -289,8 +290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weapon: {fileID: 8617620149916690939}
-  _hit: {fileID: 8461115289603144355}
-  _health: 100
+  _health: {fileID: 8714324414825068582}
 --- !u!114 &8617620149916690939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,6 +311,21 @@ MonoBehaviour:
   _shoot: {fileID: 708392447270137589}
   _timeToShoot: 0.2
   _speed: 10
+--- !u!114 &8714324414825068582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4660527176548484879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cfd63f904b821e4aab204a083ad152d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hit: {fileID: 8461115289603144355}
+  _minHealth: 0
+  _maxHealth: 100
 --- !u!114 &5287708013647353034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,8 +339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lifeBar: {fileID: 6199799159420342259}
-  _player: {fileID: 4660527176548484877}
-  _enemy: {fileID: 1057121588067064788, guid: 6d3d4430d2e73da4f80e7a216d7e198a, type: 3}
+  _health: {fileID: 8714324414825068582}
 --- !u!114 &8461115289603144355
 MonoBehaviour:
   m_ObjectHideFlags: 0

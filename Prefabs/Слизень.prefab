@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 7611417057038484220}
   - component: {fileID: 1057121588067064788}
   - component: {fileID: -6409985023316296613}
+  - component: {fileID: 6407722159306806009}
   - component: {fileID: -3149090332673596550}
   - component: {fileID: 7900627775853241157}
   - component: {fileID: -5682179782981507727}
@@ -207,8 +208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _destruction: {fileID: -5682179782981507727}
-  _hit: {fileID: 7900627775853241157}
-  _health: 100
+  _health: {fileID: 6407722159306806009}
 --- !u!114 &-6409985023316296613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,6 +229,21 @@ MonoBehaviour:
   _shoot: {fileID: 1177004983502018967}
   _timeToShoot: 2
   _speed: 3
+--- !u!114 &6407722159306806009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057121588067064793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cfd63f904b821e4aab204a083ad152d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hit: {fileID: 7900627775853241157}
+  _minHealth: 0
+  _maxHealth: 100
 --- !u!114 &-3149090332673596550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,8 +257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lifeBar: {fileID: 7838250924766510113}
-  _player: {fileID: 4660527176548484877, guid: d6210e65d03e7ca41a2e42a0f86ee18c, type: 3}
-  _enemy: {fileID: 1057121588067064788}
+  _health: {fileID: 6407722159306806009}
 --- !u!114 &7900627775853241157
 MonoBehaviour:
   m_ObjectHideFlags: 0
